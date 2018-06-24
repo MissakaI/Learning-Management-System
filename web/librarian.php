@@ -56,6 +56,8 @@
                 <br />
 
                 <!-- sidebar menu -->
+
+
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                     <div class="menu_section">
                         <h3>General</h3>
@@ -67,21 +69,14 @@
                             </li>
                             <li><a><i class="fa fa-book"></i> Manage Books <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="#">Enter Book Details</a></li>
-                                    <li><a href="#">Edit Book Details</a></li>
-                                    <li><a href="#">Remove Book Details</a></li>
-                                    <li><a href="#">View All Book Details</a></li>
+                                    <li><a onclick="navClick('add')">Enter Book Details</a></li>
+                                    <li><a onclick="navClick('view')">View All Book Details</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-book"></i> Borrow / Return Books <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="#">Borrow Books</a></li>
                                     <li><a href="#">Return Books</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-book"></i> Manage Authors <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="#">View Existing Authors</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -175,10 +170,93 @@
                 </div>
             </div>
             <!-- /top tiles -->
-            <!-- Start of view -->
 
 
-            <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12" id="view-books">
+                <div class="x_panel">
+                    <div class="x_content">
+
+                        <div class="table-responsive">
+                            <table class="table table-striped jambo_table bulk_action">
+                                <thead>
+                                <tr class="headings">
+                                    <th>
+                                        <input type="checkbox" id="check-all" class="flat">
+                                    </th>
+                                    <th class="column-title">ISBN no </th>
+                                    <th class="column-title">Title</th>
+                                    <th class="column-title">Publisher</th>
+                                    <th class="column-title">Year</th>
+                                    <th class="column-title">Author</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr class="even pointer">
+                                    <td class="a-center ">
+                                        <input type="checkbox" class="flat" name="table_records">
+                                    </td>
+                                    <td class=" ">121000040</td>
+                                    <td class=" ">May 23, 2014 11:47:56 PM </td>
+                                    <td class=" ">121000210 <i class="success fa fa-long-arrow-up"></i></td>
+                                    <td class=" ">John Blank L</td>
+                                    <td class=" ">Paid</td>
+                                </tr>
+                                <tr class="odd pointer">
+                                    <td class="a-center ">
+                                        <input type="checkbox" class="flat" name="table_records">
+                                    </td>
+                                    <td class=" ">121000039</td>
+                                    <td class=" ">May 23, 2014 11:30:12 PM</td>
+                                    <td class=" ">121000208 <i class="success fa fa-long-arrow-up"></i>
+                                    </td>
+                                    <td class=" ">John Blank L</td>
+                                    <td class=" ">Paid</td>
+                                </tr>
+                                <tr class="odd pointer">
+                                    <td class="a-center ">
+                                        <input type="checkbox" class="flat" name="table_records">
+                                    </td>
+                                    <td class=" ">121000037</td>
+                                    <td class=" ">May 26, 2014 10:52:44 PM</td>
+                                    <td class=" ">121000204</td>
+                                    <td class=" ">Mike Smith</td>
+                                    <td class=" ">Paid</td>
+                                </tr>
+
+                                <tr class="even pointer">
+                                    <td class="a-center ">
+                                        <input type="checkbox" class="flat" name="table_records">
+                                    </td>
+                                    <td class=" ">121000040</td>
+                                    <td class=" ">May 27, 2014 11:47:56 PM </td>
+                                    <td class=" ">121000210</td>
+                                    <td class=" ">John Blank L</td>
+                                    <td class=" ">Paid</td>
+                                </tr>
+                                <tr class="odd pointer">
+                                    <td class="a-center ">
+                                        <input type="checkbox" class="flat" name="table_records">
+                                    </td>
+                                    <td class=" ">121000039</td>
+                                    <td class=" ">May 28, 2014 11:30:12 PM</td>
+                                    <td class=" ">121000208</td>
+                                    <td class=" ">John Blank L</td>
+                                    <td class=" ">Paid</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-danger">Remove Selected Books</button>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <!-- Start of dashboard view -->
+            <div class="row" id="add-book">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="x_panel">
                         <div class="x_title">
@@ -188,7 +266,6 @@
                         <div class="x_content">
                             <br />
                             <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Book Title: <span class="required">*</span>
                                     </label>
@@ -210,39 +287,37 @@
                                         <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
                                     </div>
                                 </div>
-                                <div id="authors-list">
+                                <div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Author: </label>
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Author: <span class="required">*</span></label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" name="country" class="form-control col-md-10 autocomplete-custom-append"/>
+                                            <input id="author" type="text" name="country" class="form-control col-md-10 autocomplete-custom-append"/>
                                         </div><br><br>
                                     </div>
                                 </div>
-
-
-                                <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12"> </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <a style="cursor:pointer;" onclick="addCoAuthor()">Add Co-Author</a>
-                                    </div><br><br>
+                                <div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12" id="authors-list">
+                                        </div>
+                                    </div>
                                 </div>
+
                                 <div class="ln_solid"></div>
                                 <div class="form-group">
                                     <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                         <button class="btn btn-primary" type="button">Cancel</button>
                                         <button class="btn btn-primary" type="reset">Reset</button>
-                                        <button type="submit" class="btn btn-success">Submit</button>
+                                        <button type="submit" class="btn btn-success" id="submit">Submit</button>
                                     </div>
                                 </div>
-
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
 
-
-            <!-- End of view -->
+            <!-- End of dashboard view -->
             <br />
             <!-- /page content -->
 
@@ -295,25 +370,25 @@
     <script src="../vendors/moment/min/moment.min.js"></script>
     <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-
-    <!-- Custom Theme Scripts -->
-<!--    <script src="../build/js/custom.js"></script>-->
     <script src="../vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.min.js"></script>
     <script>
+
+
+
         $(document).ready(
             function () {
                 init_autocomplete();
+                $('#add-book').css('display','none');
             }
         );
+
+        countries = { DS: "Denver Simonsz", JD: "Janitha Dananajaya", MI:"Missaka Iddamalgoda"};
 
         function init_autocomplete() {
 
             if( typeof ($.fn.autocomplete) === 'undefined'){ return; }
-            console.log('init_autocomplete');
-
-            // var countries = { AD:"Andorra",A2:"Andorra Test",AE:"United Arab Emirates",AF:"Afghanistan",AG:"Antigua and Barbuda",AI:"Anguilla",AL:"Albania",AM:"Armenia",AN:"Netherlands Antilles",AO:"Angola",AQ:"Antarctica",AR:"Argentina",AS:"American Samoa",AT:"Austria",AU:"Australia",AW:"Aruba",AX:"Åland Islands",AZ:"Azerbaijan",BA:"Bosnia and Herzegovina",BB:"Barbados",BD:"Bangladesh",BE:"Belgium",BF:"Burkina Faso",BG:"Bulgaria",BH:"Bahrain",BI:"Burundi",BJ:"Benin",BL:"Saint Barthélemy",BM:"Bermuda",BN:"Brunei",BO:"Bolivia",BQ:"British Antarctic Territory",BR:"Brazil",BS:"Bahamas",BT:"Bhutan",BV:"Bouvet Island",BW:"Botswana",BY:"Belarus",BZ:"Belize",CA:"Canada",CC:"Cocos [Keeling] Islands",CD:"Congo - Kinshasa",CF:"Central African Republic",CG:"Congo - Brazzaville",CH:"Switzerland",CI:"Côte d’Ivoire",CK:"Cook Islands",CL:"Chile",CM:"Cameroon",CN:"China",CO:"Colombia",CR:"Costa Rica",CS:"Serbia and Montenegro",CT:"Canton and Enderbury Islands",CU:"Cuba",CV:"Cape Verde",CX:"Christmas Island",CY:"Cyprus",CZ:"Czech Republic",DD:"East Germany",DE:"Germany",DJ:"Djibouti",DK:"Denmark",DM:"Dominica",DO:"Dominican Republic",DZ:"Algeria",EC:"Ecuador",EE:"Estonia",EG:"Egypt",EH:"Western Sahara",ER:"Eritrea",ES:"Spain",ET:"Ethiopia",FI:"Finland",FJ:"Fiji",FK:"Falkland Islands",FM:"Micronesia",FO:"Faroe Islands",FQ:"French Southern and Antarctic Territories",FR:"France",FX:"Metropolitan France",GA:"Gabon",GB:"United Kingdom",GD:"Grenada",GE:"Georgia",GF:"French Guiana",GG:"Guernsey",GH:"Ghana",GI:"Gibraltar",GL:"Greenland",GM:"Gambia",GN:"Guinea",GP:"Guadeloupe",GQ:"Equatorial Guinea",GR:"Greece",GS:"South Georgia and the South Sandwich Islands",GT:"Guatemala",GU:"Guam",GW:"Guinea-Bissau",GY:"Guyana",HK:"Hong Kong SAR China",HM:"Heard Island and McDonald Islands",HN:"Honduras",HR:"Croatia",HT:"Haiti",HU:"Hungary",ID:"Indonesia",IE:"Ireland",IL:"Israel",IM:"Isle of Man",IN:"India",IO:"British Indian Ocean Territory",IQ:"Iraq",IR:"Iran",IS:"Iceland",IT:"Italy",JE:"Jersey",JM:"Jamaica",JO:"Jordan",JP:"Japan",JT:"Johnston Island",KE:"Kenya",KG:"Kyrgyzstan",KH:"Cambodia",KI:"Kiribati",KM:"Comoros",KN:"Saint Kitts and Nevis",KP:"North Korea",KR:"South Korea",KW:"Kuwait",KY:"Cayman Islands",KZ:"Kazakhstan",LA:"Laos",LB:"Lebanon",LC:"Saint Lucia",LI:"Liechtenstein",LK:"Sri Lanka",LR:"Liberia",LS:"Lesotho",LT:"Lithuania",LU:"Luxembourg",LV:"Latvia",LY:"Libya",MA:"Morocco",MC:"Monaco",MD:"Moldova",ME:"Montenegro",MF:"Saint Martin",MG:"Madagascar",MH:"Marshall Islands",MI:"Midway Islands",MK:"Macedonia",ML:"Mali",MM:"Myanmar [Burma]",MN:"Mongolia",MO:"Macau SAR China",MP:"Northern Mariana Islands",MQ:"Martinique",MR:"Mauritania",MS:"Montserrat",MT:"Malta",MU:"Mauritius",MV:"Maldives",MW:"Malawi",MX:"Mexico",MY:"Malaysia",MZ:"Mozambique",NA:"Namibia",NC:"New Caledonia",NE:"Niger",NF:"Norfolk Island",NG:"Nigeria",NI:"Nicaragua",NL:"Netherlands",NO:"Norway",NP:"Nepal",NQ:"Dronning Maud Land",NR:"Nauru",NT:"Neutral Zone",NU:"Niue",NZ:"New Zealand",OM:"Oman",PA:"Panama",PC:"Pacific Islands Trust Territory",PE:"Peru",PF:"French Polynesia",PG:"Papua New Guinea",PH:"Philippines",PK:"Pakistan",PL:"Poland",PM:"Saint Pierre and Miquelon",PN:"Pitcairn Islands",PR:"Puerto Rico",PS:"Palestinian Territories",PT:"Portugal",PU:"U.S. Miscellaneous Pacific Islands",PW:"Palau",PY:"Paraguay",PZ:"Panama Canal Zone",QA:"Qatar",RE:"Réunion",RO:"Romania",RS:"Serbia",RU:"Russia",RW:"Rwanda",SA:"Saudi Arabia",SB:"Solomon Islands",SC:"Seychelles",SD:"Sudan",SE:"Sweden",SG:"Singapore",SH:"Saint Helena",SI:"Slovenia",SJ:"Svalbard and Jan Mayen",SK:"Slovakia",SL:"Sierra Leone",SM:"San Marino",SN:"Senegal",SO:"Somalia",SR:"Suriname",ST:"São Tomé and Príncipe",SU:"Union of Soviet Socialist Republics",SV:"El Salvador",SY:"Syria",SZ:"Swaziland",TC:"Turks and Caicos Islands",TD:"Chad",TF:"French Southern Territories",TG:"Togo",TH:"Thailand",TJ:"Tajikistan",TK:"Tokelau",TL:"Timor-Leste",TM:"Turkmenistan",TN:"Tunisia",TO:"Tonga",TR:"Turkey",TT:"Trinidad and Tobago",TV:"Tuvalu",TW:"Taiwan",TZ:"Tanzania",UA:"Ukraine",UG:"Uganda",UM:"U.S. Minor Outlying Islands",US:"United States",UY:"Uruguay",UZ:"Uzbekistan",VA:"Vatican City",VC:"Saint Vincent and the Grenadines",VD:"North Vietnam",VE:"Venezuela",VG:"British Virgin Islands",VI:"U.S. Virgin Islands",VN:"Vietnam",VU:"Vanuatu",WF:"Wallis and Futuna",WK:"Wake Island",WS:"Samoa",YD:"People's Democratic Republic of Yemen",YE:"Yemen",YT:"Mayotte",ZA:"South Africa",ZM:"Zambia",ZW:"Zimbabwe",ZZ:"Unknown or Invalid Region" };
-            var countries = { DS: "Denver Simonsz", JD: "Janitha Dananajaya", MI:"Missaka Iddamalgoda"};
-
             var countriesArray = $.map(countries, function(value, key) {
                 return {
                     value: value,
@@ -327,6 +402,62 @@
             });
         }
 
+        $('#submit').click(function (event) {
+
+            var children = $('#authors-list').children();
+
+            var isExist = false;
+            var isExistInArray = false;
+
+            for(country in countries){
+                if(countries[country] === $('#author').val()){
+                    isExistInArray = true;
+                    break;
+                }
+            }
+
+            for(var i=0; i<children.size();i++){
+                var childval = $(children[i]).text();
+                var inputval  = $('#author').val();
+
+                var value = childval.split(" x");
+
+                if(isExistInArray) {
+                    if (value[0] === inputval) {
+                        isExist = true;
+                        break;
+                    }
+                }
+            }
+            if(!isExist && isExistInArray) {
+                    $('#authors-list').append(
+                        "<span class='tag'><span>" + $('#author').val() + "</span><a title='Removing tag'><span onclick='removeAuthor(this)' style='cursor: pointer'> x</span></a></span>"
+                    );
+            }
+
+            event.preventDefault();
+        });
+
+        function removeAuthor(value) {
+            console.log($($(value).parents(".tag")).remove(0));
+        }
+
+        function navClick(value) {
+            console.log(value);
+            let addelement = $('#add-book');
+            let viewelement = $('#view-books');
+
+            if(value==='add'){
+                    addelement.css("display","block");
+                    viewelement.css("display","none");
+            }else if(value==='view'){
+                addelement.css("display","none");
+                viewelement.css("display","block");
+            }
+        }
+
     </script>
+
+
 </body>
 </html>
