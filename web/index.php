@@ -39,7 +39,7 @@
                 <input type="password" class="form-control" placeholder="Password" required="" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="dashboard.php">Log in</a>
+                <a class="btn btn-default submit" href="company.php">Log in</a>
                 <a class="reset_pass" href="#">Lost your password?</a>
               </div>
 
