@@ -1,3 +1,6 @@
+SET @PREV_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS;
+SET FOREIGN_KEY_CHECKS=0;
+
 CREATE TABLE Professor(
   EmpId CHAR(5) NOT NULL,
   Name VARCHAR(255) NOT NULL,
@@ -20,6 +23,8 @@ CREATE TABLE Department(
   CONSTRAINT UNIQUE KEY (Name)
 );
 
+SET FOREIGN_KEY_CHECKS=@PREV_FOREIGN_KEY_CHECKS;
+
 CREATE TABLE Course(
   CourseCode CHAR(5) NOT NULL,
   Name VARCHAR(255),
@@ -29,7 +34,7 @@ CREATE TABLE Course(
   DepartmentCode CHAR(5) NOT NULL,
   CONSTRAINT PRIMARY KEY (CourseCode),
   CONSTRAINT FOREIGN KEY (PreRequisteCourseCode) REFERENCES Course(CourseCode),
-  CONSTRAINT FOREIGN KEY (DepartmentCode) REFERENCES Department(DepartmentCode)
+  CONSTRAINT FOREIGN KEY (DepartmentCode) REFERENCES Department(DepartmentCode),
   CONSTRAINT UNIQUE KEY (DepartmentCode)
 );
 
@@ -46,9 +51,9 @@ CREATE TABLE Author(
   ProfessorId CHAR(5) NOT NULL ,
   CONSTRAINT PRIMARY KEY(ISBN,ProfessorId),
   CONSTRAINT FOREIGN KEY (ISBN) REFERENCES Book(ISBN)
-  ON DELETE CASCADE ,
-  CONSTRAINT FOREIGN KEY (ProfessorId) REFERENCES Professor(ProfessorId)
   ON DELETE CASCADE,
+  CONSTRAINT FOREIGN KEY (ProfessorId) REFERENCES Professor(EmpId)
+  ON DELETE CASCADE
 );
 
 CREATE TABLE CourseSection(
@@ -62,7 +67,7 @@ CREATE TABLE CourseSection(
   ProfessorId CHAR(5) NOT NULL ,
   CONSTRAINT PRIMARY KEY (CourseCode,SectionNumber,Semester,Year),
   CONSTRAINT FOREIGN KEY (CourseCode) REFERENCES Course(CourseCode),
-  CONSTRAINT FOREIGN KEY (ProfessorId) REFERENCES Professor(ProfessorID)
+  CONSTRAINT FOREIGN KEY (ProfessorId) REFERENCES Professor(EmpId)
 );
 
 CREATE TABLE Company(
@@ -82,7 +87,7 @@ CREATE TABLE BookUsage(
   ON DELETE CASCADE,
   CONSTRAINT FOREIGN KEY (CourseCode) REFERENCES Course(CourseCode)
   ON DELETE CASCADE,
-  CONSTRAINT FOREIGN KEY (ProfessorId) REFERENCES Professor(ProfessorId)
+  CONSTRAINT FOREIGN KEY (ProfessorId) REFERENCES Professor(EmpId)
   ON DELETE CASCADE
 );
 
@@ -101,7 +106,7 @@ CREATE TABLE CourseEnrollment(
   Semester INT NOT NULL ,
   Year INT NOT NULL ,
   Grade INT,
-  CONSTRAINT PRIMARY KEY (StudentID,CourseCode,SectionNumber,Semester)
+  CONSTRAINT PRIMARY KEY (StudentID,CourseCode,SectionNumber,Semester),
   CONSTRAINT FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
   CONSTRAINT FOREIGN KEY (CourseCode,SectionNumber,Semester,Year) REFERENCES CourseSection(CourseCode,SectionNumber,Semester,Year)
 );
@@ -109,16 +114,16 @@ CREATE TABLE CourseEnrollment(
 CREATE TABLE UndergraduateStudent(
   StudentID CHAR(10),
   CONSTRAINT PRIMARY KEY (StudentID),
-  CONSTRAINT FOREIGN KEY StudentID REFERENCES Student(StudentID)
+  CONSTRAINT FOREIGN KEY (StudentID) REFERENCES Student(StudentID)
   ON DELETE CASCADE
 );
 
 CREATE TABLE GraduateStudent(
   StudentID CHAR(10),
   Thesis VARCHAR(255),
-  Option VARCHAR(255),
+  `Option` VARCHAR(255),
   CONSTRAINT PRIMARY KEY (StudentID),
-  CONSTRAINT FOREIGN KEY StudentID REFERENCES Student(StudentID)
+  CONSTRAINT FOREIGN KEY (StudentID) REFERENCES Student(StudentID)
   ON DELETE CASCADE
 );
 
@@ -127,8 +132,8 @@ CREATE TABLE CompanySessionEnrollment(
   CompanyName VARCHAR (255) NOT NULL ,
   Assesment VARCHAR (255),
   CONSTRAINT PRIMARY KEY (StudentID,CompanyName),
-  CONSTRAINT FOREIGN KEY StudentID REFERENCES Student(StudentID),
-  CONSTRAINT FOREIGN KEY CompanyName REFERENCES Company(Name)
+  CONSTRAINT FOREIGN KEY (StudentID) REFERENCES UndergraduateStudent(StudentID),
+  CONSTRAINT FOREIGN KEY (CompanyName) REFERENCES Company(Name)
 );
 
 CREATE TABLE LabSession(
