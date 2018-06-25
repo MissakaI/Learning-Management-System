@@ -60,12 +60,13 @@
                     <div class="menu_section">
                         <h3>General</h3>
                         <ul class="nav side-menu">
-                            <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="proffessor.php"><i class="fa fa-home"></i> Student <span class="fa fa-chevron-down"></span></a></li>
+                            <li><a href="company-manager.php"><i class="fa fa-home"></i> Home </a></li>
+                        </ul>
+                        <ul class="nav side-menu">
+                            <li><a href="studednt.php"><i class="fa fa-home"></i> Student</a></li>
+                        </ul>
+                        <ul class="nav side-menu">
+                            <li><a href="company.php"><i class="fa fa-home"></i> Company</span></a></li>
                         </ul>
                     </div>
                 </div>

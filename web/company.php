@@ -60,9 +60,9 @@
                     <div class="menu_section">
                         <h3>General</h3>
                         <ul class="nav side-menu">
-                            <li><a href="company.php"><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="company-manager.php"><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="root.php">Dashboard</a></li>
+                                    <li><a href="">Dashboard</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -206,14 +206,6 @@
                                 <th>Password</th>
                                 <th></th>
                                 <th></th>
-                                <td>
-                                    <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#/pencil-square-o"><i class="fa fa-edit"></i></a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#/pencil-square-o"><i class="fa fa-remove"></i></a>
-                                    </div>
-                                </td>
                             </tr>
                             <tbody>
                             <tr>
