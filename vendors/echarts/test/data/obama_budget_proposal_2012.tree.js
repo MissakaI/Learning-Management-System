@@ -3347,7 +3347,7 @@ window.obama_budget_2012 = [
                     960000,
                     -5.10416666666667
                 ],
-                "name": "Department-Wide Programs",
+                "name": "DepartmentBO-Wide Programs",
                 "id": "leaf-238",
                 "discretion": "discretionary"
             },
@@ -3367,7 +3367,7 @@ window.obama_budget_2012 = [
                     626000,
                     -30.1916932907348
                 ],
-                "name": "Department-Wide Programs",
+                "name": "DepartmentBO-Wide Programs",
                 "id": "leaf-253",
                 "discretion": "mandatory"
             },
