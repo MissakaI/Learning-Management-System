@@ -375,8 +375,6 @@
     <script src="../build/js/custom.min.js"></script>
     <script>
 
-
-
         $(document).ready(
             function () {
                 init_autocomplete();
@@ -439,7 +437,7 @@
         });
 
         function removeAuthor(value) {
-            console.log($($(value).parents(".tag")).remove(0));
+            $($(value).parents(".tag")).remove(0)
         }
 
         function navClick(value) {
