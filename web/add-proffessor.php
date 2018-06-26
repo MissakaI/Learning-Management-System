@@ -213,7 +213,7 @@
                                     <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                         <button class="btn btn-primary" type="button">Cancel</button>
                                         <button class="btn btn-primary" type="reset">Reset</button>
-                                        <button type="submit" class="btn btn-success">Submit</button>
+                                        <button type="submit" class="btn btn-success" onclick="send_details()">Submit</button>
                                     </div>
                                 </div>
 
@@ -328,7 +328,7 @@
                 }
             };
             xhttp.open("POST", "ProfessorController.php", true);
-            xhttp.send("Empid="+$("#empa-id").val()+"Name"+$("#name").val()+"Office"+$("#office").val()+"Phone"+$("#mobile").val()+"DepartmentCode"+$("#d:selected").text(););
+            xhttp.send("Empid="+$("#empa-id").val()+"&Name="+$("#name").val()+"&Office="+$("#office").val()+"&Phone="+$("#mobile").val()+"&DepartmentCode="+$("#d:selected").text()+"&action=add";);
         }
 
 
