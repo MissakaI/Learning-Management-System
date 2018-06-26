@@ -63,7 +63,7 @@
                             <li><a href="company-manager.php"><i class="fa fa-home"></i> Home </a></li>
                         </ul>
                         <ul class="nav side-menu">
-                            <li><a href="studednt.php"><i class="fa fa-home"></i> Student</a></li>
+                            <li><a href="manage-studednt.php"><i class="fa fa-home"></i> Student</a></li>
                         </ul>
                         <!--TODO: copy the company div from root so that company manager can use it-->
                         <ul class="nav side-menu">
