@@ -202,7 +202,7 @@
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Depatment Code</label>
                                     <div class="col-md-7 col-xs-12">
                                         <select class="form-control">
-                                            
+
                                         </select>
                                     </div>
                                 </div>
@@ -218,6 +218,10 @@
                                 </div>
 
                             </form>
+
+                            <div id="result">
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -312,10 +316,18 @@
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("demo").innerHTML = this.responseText;
+                    if (xhttp.responseText === 'TRUE'){
+                        $('#result').append(
+                            "<div class='alert alert-success'>Professor Added</div>"
+                        );
+                    }else{
+                        $('#result').append(
+                            "<div class='alert alert-danger'>Professor Adding Failed</div>"
+                        );
+                    }
                 }
             };
-            xhttp.open("POST", "ajax_info.txt", true);
+            xhttp.open("POST", "ProfessorController.php", true);
             xhttp.send("Empid="+$("#empa-id").val()+"Name"+$("#name").val()+"Office"+$("#office").val()+"Phone"+$("#mobile").val()+"DepartmentCode"+$("#d:selected").text(););
         }
 
