@@ -203,7 +203,7 @@
                                 <th>Classroom</th>
                                 <th>Class Time</th>
                                 <th>Class Size</th>
-                                <th>Proffessor</th>
+                                <th>Professor</th>
                                 <th></th>
                                 <th></th>
                             </tr>

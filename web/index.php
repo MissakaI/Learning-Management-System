@@ -40,7 +40,7 @@
               </div>
               <div>
                 <a class="btn btn-default submit" href="root.php">Log in</a>
-                <a class="reset_pass" href="#">Lost your password?</a>
+                <a class="reset_pass" href="add-proffessor.php">Lost your password?</a>
               </div>
 
               <div class="clearfix"></div>

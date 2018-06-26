@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="images/favicon.ico" type="image/ico" />
+    <link rel="icon" href="images/favicon.ico" type="image/ico"/>
 
     <title>Gentelella Alela! | </title>
 
@@ -53,14 +53,15 @@
                 </div>
                 <!-- /menu profile quick info -->
 
-                <br />
+                <br/>
 
                 <!-- sidebar menu -->
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                     <div class="menu_section">
                         <h3>General</h3>
                         <ul class="nav side-menu">
-                            <li><a href="root.php"><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="root.php"><i class="fa fa-home"></i> Home <span
+                                            class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="root.php">aa</a></li>
                                 </ul>
@@ -99,7 +100,8 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
-                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
+                               aria-expanded="false">
                                 <img src="images/img.jpg" alt="">John Doe
                                 <span class=" fa fa-angle-down"></span>
                             </a>
@@ -132,27 +134,32 @@
                 <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
                     <span class="count_top"><i class="fa fa-clock-o"></i> Average Time</span>
                     <div class="count">123.50</div>
-                    <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
+                    <span class="count_bottom"><i class="green"><i
+                                    class="fa fa-sort-asc"></i>3% </i> From last Week</span>
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
                     <span class="count_top"><i class="fa fa-user"></i> Total Males</span>
                     <div class="count green">2,500</div>
-                    <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+                    <span class="count_bottom"><i class="green"><i
+                                    class="fa fa-sort-asc"></i>34% </i> From last Week</span>
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
                     <span class="count_top"><i class="fa fa-user"></i> Total Females</span>
                     <div class="count">4,567</div>
-                    <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span>
+                    <span class="count_bottom"><i class="red"><i
+                                    class="fa fa-sort-desc"></i>12% </i> From last Week</span>
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
                     <span class="count_top"><i class="fa fa-user"></i> Total Collections</span>
                     <div class="count">2,315</div>
-                    <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+                    <span class="count_bottom"><i class="green"><i
+                                    class="fa fa-sort-asc"></i>34% </i> From last Week</span>
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
                     <span class="count_top"><i class="fa fa-user"></i> Total Connections</span>
                     <div class="count">7,325</div>
-                    <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+                    <span class="count_bottom"><i class="green"><i
+                                    class="fa fa-sort-asc"></i>34% </i> From last Week</span>
                 </div>
             </div>
             <!-- /top tiles -->
@@ -163,47 +170,62 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Enter Proffessor Details<small>Add new professor to the system.</small></h2>
+                            <h2>Enter Proffessor Details
+                                <small>Add new professor to the system.</small>
+                            </h2>
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
-                            <br />
+                            <br/>
                             <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="emp-id">Employee ID: <span class="required">*</span>
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="emp-id">Employee ID:
+                                        <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" id="empa-id" required="required" class="form-control col-md-7 col-xs-12">
+                                        <input type="text" id="empa-id" required="required"
+                                               class="form-control col-md-7 col-xs-12">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name: <span class="required">*</span>
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name: <span
+                                                class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" id="name" name="name" required="required" class="form-control col-md-7 col-xs-12">
+                                        <input type="text" id="name" name="name" required="required"
+                                               class="form-control col-md-7 col-xs-12">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="office" class="control-label col-md-3 col-sm-3 col-xs-12">Office: <span class="required">*</span>
+                                    <label for="office" class="control-label col-md-3 col-sm-3 col-xs-12">Office: <span
+                                                class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input id="office" class="form-control col-md-7 col-xs-12" type="text" name="office">
+                                        <input id="office" class="form-control col-md-7 col-xs-12" type="text"
+                                               name="office">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="mobile" class="control-label col-md-3 col-sm-3 col-xs-12">Mobile No: <span class="required">*</span>
+                                    <label for="mobile" class="control-label col-md-3 col-sm-3 col-xs-12">Mobile No:
+                                        <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input id="mobile" class="form-control col-md-7 col-xs-12" type="text" name="mobile">
+                                        <input id="mobile" class="form-control col-md-7 col-xs-12" type="text"
+                                               name="mobile">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Depatment Code</label>
                                     <div class="col-md-7 col-xs-12">
-                                        <select class="form-control">
+                                        <<<<<<< HEAD
+                                        <select id="dep_code" class="form-control">
 
-                                        </select>
+                                            =======
+                                            <select class="form-control">
+
+                                                >>>>>>> 8939b5936d4a4a155bad86c58b745d34c1b1b180
+                                            </select>
                                     </div>
                                 </div>
 
@@ -213,7 +235,12 @@
                                     <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                         <button class="btn btn-primary" type="button">Cancel</button>
                                         <button class="btn btn-primary" type="reset">Reset</button>
-                                        <button type="submit" class="btn btn-success">Submit</button>
+<<<<<<< HEAD
+                                        <button type="submit" class="btn btn-success" onclick="send_details()">Submit
+                                        </button>
+=======
+                                        <button type="submit" class="btn btn-success" onclick="send_details()">Submit</button>
+>>>>>>> a60c710188e78b5128f2d27bd689b463ef92ab84
                                     </div>
                                 </div>
 
@@ -228,7 +255,7 @@
             </div>
 
             <!-- End of view -->
-            <br />
+            <br/>
             <!-- /page content -->
 
             <!-- footer content -->
@@ -293,13 +320,15 @@
 
         function init_autocomplete() {
 
-            if( typeof ($.fn.autocomplete) === 'undefined'){ return; }
+            if (typeof ($.fn.autocomplete) === 'undefined') {
+                return;
+            }
             console.log('init_autocomplete');
 
             // var countries = { AD:"Andorra",A2:"Andorra Test",AE:"United Arab Emirates",AF:"Afghanistan",AG:"Antigua and Barbuda",AI:"Anguilla",AL:"Albania",AM:"Armenia",AN:"Netherlands Antilles",AO:"Angola",AQ:"Antarctica",AR:"Argentina",AS:"American Samoa",AT:"Austria",AU:"Australia",AW:"Aruba",AX:"Åland Islands",AZ:"Azerbaijan",BA:"Bosnia and Herzegovina",BB:"Barbados",BD:"Bangladesh",BE:"Belgium",BF:"Burkina Faso",BG:"Bulgaria",BH:"Bahrain",BI:"Burundi",BJ:"Benin",BL:"Saint Barthélemy",BM:"Bermuda",BN:"Brunei",BO:"Bolivia",BQ:"British Antarctic Territory",BR:"Brazil",BS:"Bahamas",BT:"Bhutan",BV:"Bouvet Island",BW:"Botswana",BY:"Belarus",BZ:"Belize",CA:"Canada",CC:"Cocos [Keeling] Islands",CD:"Congo - Kinshasa",CF:"Central African Republic",CG:"Congo - Brazzaville",CH:"Switzerland",CI:"Côte d’Ivoire",CK:"Cook Islands",CL:"Chile",CM:"Cameroon",CN:"China",CO:"Colombia",CR:"Costa Rica",CS:"Serbia and Montenegro",CT:"Canton and Enderbury Islands",CU:"Cuba",CV:"Cape Verde",CX:"Christmas Island",CY:"Cyprus",CZ:"Czech Republic",DD:"East Germany",DE:"Germany",DJ:"Djibouti",DK:"Denmark",DM:"Dominica",DO:"Dominican Republic",DZ:"Algeria",EC:"Ecuador",EE:"Estonia",EG:"Egypt",EH:"Western Sahara",ER:"Eritrea",ES:"Spain",ET:"Ethiopia",FI:"Finland",FJ:"Fiji",FK:"Falkland Islands",FM:"Micronesia",FO:"Faroe Islands",FQ:"French Southern and Antarctic Territories",FR:"France",FX:"Metropolitan France",GA:"Gabon",GB:"United Kingdom",GD:"Grenada",GE:"Georgia",GF:"French Guiana",GG:"Guernsey",GH:"Ghana",GI:"Gibraltar",GL:"Greenland",GM:"Gambia",GN:"Guinea",GP:"Guadeloupe",GQ:"Equatorial Guinea",GR:"Greece",GS:"South Georgia and the South Sandwich Islands",GT:"Guatemala",GU:"Guam",GW:"Guinea-Bissau",GY:"Guyana",HK:"Hong Kong SAR China",HM:"Heard Island and McDonald Islands",HN:"Honduras",HR:"Croatia",HT:"Haiti",HU:"Hungary",ID:"Indonesia",IE:"Ireland",IL:"Israel",IM:"Isle of Man",IN:"India",IO:"British Indian Ocean Territory",IQ:"Iraq",IR:"Iran",IS:"Iceland",IT:"Italy",JE:"Jersey",JM:"Jamaica",JO:"Jordan",JP:"Japan",JT:"Johnston Island",KE:"Kenya",KG:"Kyrgyzstan",KH:"Cambodia",KI:"Kiribati",KM:"Comoros",KN:"Saint Kitts and Nevis",KP:"North Korea",KR:"South Korea",KW:"Kuwait",KY:"Cayman Islands",KZ:"Kazakhstan",LA:"Laos",LB:"Lebanon",LC:"Saint Lucia",LI:"Liechtenstein",LK:"Sri Lanka",LR:"Liberia",LS:"Lesotho",LT:"Lithuania",LU:"Luxembourg",LV:"Latvia",LY:"Libya",MA:"Morocco",MC:"Monaco",MD:"Moldova",ME:"Montenegro",MF:"Saint Martin",MG:"Madagascar",MH:"Marshall Islands",MI:"Midway Islands",MK:"Macedonia",ML:"Mali",MM:"Myanmar [Burma]",MN:"Mongolia",MO:"Macau SAR China",MP:"Northern Mariana Islands",MQ:"Martinique",MR:"Mauritania",MS:"Montserrat",MT:"Malta",MU:"Mauritius",MV:"Maldives",MW:"Malawi",MX:"Mexico",MY:"Malaysia",MZ:"Mozambique",NA:"Namibia",NC:"New Caledonia",NE:"Niger",NF:"Norfolk Island",NG:"Nigeria",NI:"Nicaragua",NL:"Netherlands",NO:"Norway",NP:"Nepal",NQ:"Dronning Maud Land",NR:"Nauru",NT:"Neutral Zone",NU:"Niue",NZ:"New Zealand",OM:"Oman",PA:"Panama",PC:"Pacific Islands Trust Territory",PE:"Peru",PF:"French Polynesia",PG:"Papua New Guinea",PH:"Philippines",PK:"Pakistan",PL:"Poland",PM:"Saint Pierre and Miquelon",PN:"Pitcairn Islands",PR:"Puerto Rico",PS:"Palestinian Territories",PT:"Portugal",PU:"U.S. Miscellaneous Pacific Islands",PW:"Palau",PY:"Paraguay",PZ:"Panama Canal Zone",QA:"Qatar",RE:"Réunion",RO:"Romania",RS:"Serbia",RU:"Russia",RW:"Rwanda",SA:"Saudi Arabia",SB:"Solomon Islands",SC:"Seychelles",SD:"Sudan",SE:"Sweden",SG:"Singapore",SH:"Saint Helena",SI:"Slovenia",SJ:"Svalbard and Jan Mayen",SK:"Slovakia",SL:"Sierra Leone",SM:"San Marino",SN:"Senegal",SO:"Somalia",SR:"Suriname",ST:"São Tomé and Príncipe",SU:"Union of Soviet Socialist Republics",SV:"El Salvador",SY:"Syria",SZ:"Swaziland",TC:"Turks and Caicos Islands",TD:"Chad",TF:"French Southern Territories",TG:"Togo",TH:"Thailand",TJ:"Tajikistan",TK:"Tokelau",TL:"Timor-Leste",TM:"Turkmenistan",TN:"Tunisia",TO:"Tonga",TR:"Turkey",TT:"Trinidad and Tobago",TV:"Tuvalu",TW:"Taiwan",TZ:"Tanzania",UA:"Ukraine",UG:"Uganda",UM:"U.S. Minor Outlying Islands",US:"United States",UY:"Uruguay",UZ:"Uzbekistan",VA:"Vatican City",VC:"Saint Vincent and the Grenadines",VD:"North Vietnam",VE:"Venezuela",VG:"British Virgin Islands",VI:"U.S. Virgin Islands",VN:"Vietnam",VU:"Vanuatu",WF:"Wallis and Futuna",WK:"Wake Island",WS:"Samoa",YD:"People's Democratic Republic of Yemen",YE:"Yemen",YT:"Mayotte",ZA:"South Africa",ZM:"Zambia",ZW:"Zimbabwe",ZZ:"Unknown or Invalid Region" };
-            var countries = { DS: "Denver Simonsz", JD: "Janitha Dananajaya", MI:"Missaka Iddamalgoda"};
+            var countries = {DS: "Denver Simonsz", JD: "Janitha Dananajaya", MI: "Missaka Iddamalgoda"};
 
-            var countriesArray = $.map(countries, function(value, key) {
+            var countriesArray = $.map(countries, function (value, key) {
                 return {
                     value: value,
                     data: key
@@ -312,23 +341,30 @@
             });
         }
 
-        function send_details(){
+        function send_details() {
             var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
+            xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    if (xhttp.responseText === 'TRUE'){
+                    if (xhttp.responseText === 'TRUE') {
                         $('#result').append(
                             "<div class='alert alert-success'>Professor Added</div>"
                         );
-                    }else{
+                    } else {
                         $('#result').append(
                             "<div class='alert alert-danger'>Professor Adding Failed</div>"
                         );
                     }
                 }
             };
+
             xhttp.open("POST", "ProfessorController.php", true);
-            xhttp.send("Empid="+$("#empa-id").val()+"Name"+$("#name").val()+"Office"+$("#office").val()+"Phone"+$("#mobile").val()+"DepartmentCode"+$("#d:selected").text(););
+<<<<<<< HEAD
+            xhttp.send("Empid=" + $("#empa-id").val() + "Name" + $("#name").val() + "Office" + $("#office").val() + "Phone" + $("#mobile").val() + "DepartmentCode" + $("#dep-code:selected").text();
+        )
+            ;
+=======
+            xhttp.send("Empid="+$("#empa-id").val()+"&Name="+$("#name").val()+"&Office="+$("#office").val()+"&Phone="+$("#mobile").val()+"&DepartmentCode="+$("#d:selected").text()+"&action=add";);
+>>>>>>> a60c710188e78b5128f2d27bd689b463ef92ab84
         }
 
 
