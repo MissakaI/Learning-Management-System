@@ -315,7 +315,7 @@
                     document.getElementById("demo").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("POST", "ajax_info.txt", true);
+            xhttp.open("POST", "ProfessorController.php", true);
             xhttp.send("Empid="+$("#empa-id").val()+"Name"+$("#name").val()+"Office"+$("#office").val()+"Phone"+$("#mobile").val()+"DepartmentCode"+$("#d:selected").text(););
         }
 
