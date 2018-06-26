@@ -143,5 +143,8 @@ class Course
         }
     }
 
+    public function getLabSessions(\Course\CourseSectionBO $sectionBO): array
+    {
 
+    }
 }
