@@ -17,7 +17,7 @@ class Course
             $arr = array();
             while ($row = $resultSet->fetch_assoc()) {
                 $bo = new \Course\CourseBO($row["CourseCode"], $row["Name"], $row["CreditHours"], $row["College"],
-                    $row["PreRequisteCourseCode"], $row["DepartmentCode"]);
+                    $row["PreRequisiteCourseCode"], $row["DepartmentCode"]);
                 array_push($arr, $bo);
             }
             return $arr;
