@@ -17,6 +17,8 @@ class CourseSectionBO
     private $year = 0;
     private $classroom = "";
     private $classTime = "";
+    private $classSize = 0;
+
     private $professor;
 
     /**
@@ -27,9 +29,10 @@ class CourseSectionBO
      * @param int $year
      * @param string $classroom
      * @param string $classTime
+     * @param int $classSize
      * @param $professor
      */
-    public function __construct($course, int $sectionNumber, int $semester, int $year, string $classroom, string $classTime, $professor)
+    public function __construct($course, int $sectionNumber, int $semester, int $year, string $classroom, string $classTime, int $classSize, $professor)
     {
         $this->course = $course;
         $this->sectionNumber = $sectionNumber;
@@ -37,6 +40,7 @@ class CourseSectionBO
         $this->year = $year;
         $this->classroom = $classroom;
         $this->classTime = $classTime;
+        $this->classSize = $classSize;
         $this->professor = $professor;
     }
 
@@ -150,6 +154,22 @@ class CourseSectionBO
     public function setProfessor($professor): void
     {
         $this->professor = $professor;
+    }
+
+    /**
+     * @return int
+     */
+    public function getClassSize(): int
+    {
+        return $this->classSize;
+    }
+
+    /**
+     * @param int $classSize
+     */
+    public function setClassSize(int $classSize): void
+    {
+        $this->classSize = $classSize;
     }
 
 
