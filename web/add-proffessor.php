@@ -201,8 +201,13 @@
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Depatment Code</label>
                                     <div class="col-md-7 col-xs-12">
+<<<<<<< HEAD
                                         <select id="dep_code" class="form-control">
                                             
+=======
+                                        <select class="form-control">
+
+>>>>>>> 8939b5936d4a4a155bad86c58b745d34c1b1b180
                                         </select>
                                     </div>
                                 </div>
@@ -315,8 +320,13 @@
                     document.getElementById("demo").innerHTML = this.responseText;
                 }
             };
+<<<<<<< HEAD
             xhttp.open("POST", "ajax_info.txt", true);
             xhttp.send("Empid="+$("#empa-id").val()+"Name"+$("#name").val()+"Office"+$("#office").val()+"Phone"+$("#mobile").val()+"DepartmentCode"+$("#dep-code option:selected").text(););
+=======
+            xhttp.open("POST", "ProfessorController.php", true);
+            xhttp.send("Empid="+$("#empa-id").val()+"Name"+$("#name").val()+"Office"+$("#office").val()+"Phone"+$("#mobile").val()+"DepartmentCode"+$("#d:selected").text(););
+>>>>>>> 8939b5936d4a4a155bad86c58b745d34c1b1b180
         }
 
 
