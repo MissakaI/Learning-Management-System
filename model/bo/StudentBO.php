@@ -15,6 +15,8 @@ class StudentBO
     private $name = "";
     private $address = "";
     private $status = "";
+    private $thesis = "";
+    private $option = "";
 
     /**
      * StudentBO constructor.
@@ -93,6 +95,38 @@ class StudentBO
     public function setStatus(string $status): void
     {
         $this->status = $status;
+    }
+
+    /**
+     * @return string
+     */
+    public function getThesis(): string
+    {
+        return $this->thesis;
+    }
+
+    /**
+     * @param string $thesis
+     */
+    public function setThesis(string $thesis): void
+    {
+        $this->thesis = $thesis;
+    }
+
+    /**
+     * @return string
+     */
+    public function getOption(): string
+    {
+        return $this->option;
+    }
+
+    /**
+     * @param string $option
+     */
+    public function setOption(string $option): void
+    {
+        $this->option = $option;
     }
 
 }
