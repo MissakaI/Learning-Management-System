@@ -8,15 +8,20 @@
 
 
 
-
+$action = $_POST["action"];
 $Empid = $_POST["Empid"];
 $Name = $_POST["Name"];
 $Office = $_POST["Office"];
 $Phone = $_POST["Phone"];
 $DepartmentCode = $_POST["DepartmentCode"];
 
-$ProfessorBO = new Professor\ProfessorBO($Empid,$Name,$Office,$Phone,$DepartmentCode);
+if($action === 'add') {
 
-$ProfessorModel = new \Professor\Professor();
-$value = $ProfessorModel -> addProfessor($ProfessorBO);
-echo $value;
+
+
+    $ProfessorBO = new Professor\ProfessorBO($Empid, $Name, $Office, $Phone, $DepartmentCode);
+
+    $ProfessorModel = new \Professor\Professor();
+    $value = $ProfessorModel->addProfessor($ProfessorBO);
+    echo $value;
+}
