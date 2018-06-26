@@ -195,18 +195,14 @@
                                     <label for="mobile" class="control-label col-md-3 col-sm-3 col-xs-12">Mobile No: <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input id="office" class="form-control col-md-7 col-xs-12" type="text" name="mobile">
+                                        <input id="mobile" class="form-control col-md-7 col-xs-12" type="text" name="mobile">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Depatment Code</label>
                                     <div class="col-md-7 col-xs-12">
                                         <select class="form-control">
-                                            <option>Choose option</option>
-                                            <option>Option one</option>
-                                            <option>Option two</option>
-                                            <option>Option three</option>
-                                            <option>Option four</option>
+                                            
                                         </select>
                                     </div>
                                 </div>
