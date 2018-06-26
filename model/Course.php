@@ -16,7 +16,8 @@ class Course
         if ($resultSet->num_rows > 0) {
             $arr = array();
             while ($row = $resultSet->fetch_assoc()) {
-                $bo = new \Course\CourseBO($row["CourseCode"], $row["Name"], $row["CreditHours"], $row["College"], $row["PreRequisteCourseCode"], $row["DepartmentCode"]);
+                $bo = new \Course\CourseBO($row["CourseCode"], $row["Name"], $row["CreditHours"], $row["College"],
+                    $row["PreRequisteCourseCode"], $row["DepartmentCode"]);
                 array_push($arr, $bo);
             }
             return $arr;
@@ -25,15 +26,16 @@ class Course
         }
     }
 
-    public function getCoursesOfferedBy(int $depId): array
+    public function getCoursesOfferedBy(string $department): array
     {
         $conn = DBConnection::getConnection();
-        $sql = "SELECT * FROM Course WHERE DepartmentCode='{$depId}'";
+        $sql = "SELECT * FROM Course WHERE DepartmentCode='{$department}'";
         $resultSet = $conn->query($sql);
         if ($resultSet->num_rows > 0) {
             $arr = array();
             while ($row = $resultSet->fetch_assoc()) {
-                $bo = new \Course\CourseBO($row["CourseCode"], $row["Name"], $row["CreditHours"], $row["College"], $row["PreRequisteCourseCode"], $row["DepartmentCode"]);
+                $bo = new \Course\CourseBO($row["CourseCode"], $row["Name"], $row["CreditHours"], $row["College"],
+                    $row["PreRequisteCourseCode"], $row["DepartmentCode"]);
                 array_push($arr, $bo);
             }
             return $arr;
@@ -67,4 +69,24 @@ class Course
             return FALSE;
         }
     }
+
+    public function getCourseSectionsOf(string $course): array
+    {
+        $conn = DBConnection::getConnection();
+        $sql = "SELECT * FROM CourseSection WHERE CourseCode='{$course}'";
+        $resultSet = $conn->query($sql);
+        if ($resultSet->num_rows > 0) {
+            $arr = array();
+            while ($row = $resultSet->fetch_assoc()) {
+                $bo = new \Course\CourseBO($row["CourseCode"], $row["Name"], $row["CreditHours"], $row["College"],
+                    $row["PreRequisteCourseCode"], $row["DepartmentCode"]);
+                array_push($arr, $bo);
+            }
+            return $arr;
+        } else {
+            return NULL;
+        }
+    }
+
+
 }

@@ -6,7 +6,7 @@
  * Time: 9:11 AM
  */
 
-namespace Student;
+namespace Course;
 
 
 class CourseEnrollmentBO
