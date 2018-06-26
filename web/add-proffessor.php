@@ -223,6 +223,10 @@
                                 </div>
 
                             </form>
+
+                            <div id="result">
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -317,7 +321,15 @@
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("demo").innerHTML = this.responseText;
+                    if (xhttp.responseText === 'TRUE'){
+                        $('#result').append(
+                            "<div class='alert alert-success'>Professor Added</div>"
+                        );
+                    }else{
+                        $('#result').append(
+                            "<div class='alert alert-danger'>Professor Adding Failed</div>"
+                        );
+                    }
                 }
             };
 <<<<<<< HEAD
