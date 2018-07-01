@@ -9,7 +9,7 @@
 $username = $_POST["username"];
 //echo $username;
 
-if (preg_match('/^2017\/[A-Za-z]{2}\/\d{3}$/', $username) === 1) {
+if (preg_match('/^\d{4}\/[A-Za-z]{2}\/\d{3}$/', $username) === 1) {
 
 } else if (preg_match('/^EP\d{3}$/', $username) === 1) {
 
