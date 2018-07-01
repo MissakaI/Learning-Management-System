@@ -8,6 +8,9 @@
  */
 
 namespace DepartmentModel;
+include_once($_SERVER['DOCUMENT_ROOT'] . '/Learning_Management_System' . '/model/DBConnection.php');
+
+use \ConnectionModel\DBConnection;
 
 class Department
 {

@@ -48,7 +48,7 @@
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
-                        <h2>John Doe</h2>
+                        <h2>Academic Officer</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -97,7 +97,7 @@
                         <li class="">
                             <a href="javascript:" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="images/img.jpg" alt="">John Doe
+                                <img src="images/img.jpg" alt="">Academic Officer
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -121,7 +121,7 @@
         <div class="right_col" role="main">
             <div class="">
                 <!-- top tiles -->
-                <div class="row tile_count" id="dash">
+                <!--<div class="row tile_count" id="dash">
                     <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
                         <span class="count_top"><i class="fa fa-user"></i> Total Users</span>
                         <div class="count">2500</div>
@@ -157,7 +157,7 @@
                         <span class="count_bottom"><i class="green"><i
                                         class="fa fa-sort-asc"></i>34% </i> From last Week</span>
                     </div>
-                </div>
+                </div>-->
                 <!-- /top tiles -->
                 <!-- Start of dashboard views -->
 
@@ -191,27 +191,20 @@
                                     <table class="table table-striped jambo_table">
                                         <thead>
                                         <tr class="headings">
-                                            <!--                                            <th>-->
-                                            <!--                                                <input type="checkbox" id="check-all" class="flat">-->
-                                            <!--                                            </th>-->
-                                            <th class="column-title">Emp Id</th>
+                                            <th class="column-title">Student Id</th>
                                             <th class="column-title">Name</th>
                                             <th class="column-title">Address</th>
                                             <th class="column-title">Status</th>
                                             <th class="column-title" colspan="2">Actions</th>
-                                            <!--                                            <th class="column-title"></th>-->
                                         </tr>
                                         </thead>
 
                                         <tbody>
                                         <tr class="even pointer">
-                                            <!--                                            <td class="a-center ">-->
-                                            <!--                                                <input type="checkbox" class="flat" name="table_records">-->
-                                            <!--                                            </td>-->
-                                            <td class=" ">121000040</td>
-                                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                                            <td class=" ">121000210 <i class="success fa fa-long-arrow-up"></i></td>
-                                            <td class=" ">John Blank L</td>
+                                            <td class=" ">2017/CS/500</td>
+                                            <td class=" ">Mr Imitiaz</td>
+                                            <td class=" ">Galle Fort</td>
+                                            <td class=" ">N/A</td>
                                             <td>
                                                 <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a
                                                             href="#/pencil-square-o"><i class="fa fa-edit"></i></a>

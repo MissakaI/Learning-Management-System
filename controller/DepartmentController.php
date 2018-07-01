@@ -7,13 +7,15 @@
  */
 
 //require('.php');
-//use DepartmentModel\Department;
+include_once($_SERVER['DOCUMENT_ROOT'] . '/Learning_Management_System' . '/model/Department.php');
+
+use \DepartmentModel;
 
 $acttion = $_GET["action"];
 
 
 if($acttion == 'view-all'){
-    $DeparmentModel = new \DepartmentModel\Department();
+    $DeparmentModel = new DepartmentModel\Department();
     $value = $DeparmentModel->getDepartments();
     echo $value;
 }
