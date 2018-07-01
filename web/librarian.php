@@ -71,8 +71,8 @@
                             <li><a><i class="fa fa-book"></i> Borrow / Return Books <span
                                             class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="#">Borrow Books</a></li>
-                                    <li><a href="#">Return Books</a></li>
+                                    <li><a onclick="#">Borrow Books</a></li>
+                                    <li><a onclick="navClick('return_books')">Return Books</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-book"></i> Lending Books <span class="fa fa-chevron-down"></span></a>
@@ -359,6 +359,60 @@
                     </div>
                 </div>
 
+
+                <div class="row" id="all-return-books">
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="view-books">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>All Return Books
+                                    <small>List of currently return books</small>
+                                </h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="table-responsive">
+                                    <table class="table table-striped jambo_table bulk_action">
+                                        <thead>
+                                        <tr class="headings">
+                                            <th>
+                                                <input type="checkbox" id="check-all" class="flat">
+                                            </th>
+                                            <th class="column-title">Book Name</th>
+                                            <th class="column-title">ISBN</th>
+                                            <th class="column-title">Student ID</th>
+                                            <th class="column-title">Date</th>
+                                            <th class="column-title">Return Date</th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <tr class="even pointer">
+                                            <td class="a-center ">
+                                                <input type="checkbox" class="flat" name="table_records">
+                                            </td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="ln_solid"></div>
+                                <div class="form-group">
+                                    <div class="col-md-2 col-sm-2 col-xs-12 col-sm-offset-9 col-md-offset-9 col-lg-offset-10">
+                                        <button type="button" class="btn btn-danger left">Remove Selected Books</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
                 <!-- End of dashboard view -->
             </div>
         </div>
@@ -423,6 +477,7 @@
             init_autocomplete();
             $('#add-book').css('display', 'none');
             $('#all-lended-books').css('display', 'none');
+            $('#all-return-books').css('display', 'none');
 
             console.log("working");
             var xhttp = new XMLHttpRequest();
@@ -502,20 +557,30 @@
         let addelement = $('#add-book');
         let viewelement = $('#view-books');
         let viewlendelement=$('#all-lended-books');
+        let viewreturnelement=$('#all-return-books');
 
         if (value === 'add') {
             addelement.css("display", "block");
             viewelement.css("display", "none");
             viewlendelement.css("display", "none");
+            viewreturnelement.css("display", "none");
         } else if (value === 'view') {
             addelement.css("display", "none");
             viewelement.css("display", "block");
             viewlendelement.css("display", "none");
+            viewreturnelement.css("display", "none");
         }else if (value === 'view_lending') {
             viewlendelement.css("display", "block");
             addelement.css("display", "none");
             viewelement.css("display", "none");
+            viewreturnelement.css("display", "none");
+        }else if (value === 'return_books') {
+            viewlendelement.css("display", "none");
+            addelement.css("display", "none");
+            viewelement.css("display", "none");
+            viewreturnelement.css("display", "block");
         }
+
     }
 
     $(document).load(function () {
