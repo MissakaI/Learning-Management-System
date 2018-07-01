@@ -62,7 +62,7 @@
                         <ul class="nav side-menu">
                             <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
+                                    <li><a href="#">Dashboard</a></li>
                                 </ul>
                             </li>
                             <li><a onclick="navClick('professor')"><i class="fa fa-home"></i> Professor </a></li>
@@ -444,8 +444,6 @@
                                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Depatment Code</label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <select id="dep_code" class="form-control">
-
-
                                             </select>
                                         </div>
                                     </div>
@@ -453,7 +451,7 @@
                                     <div class="form-group">
                                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                             <button class="btn btn-primary" type="reset">Reset</button>
-                                            <button type="submit" class="btn btn-success" onclick="send_details()">
+                                            <button type="submit" class="btn btn-success" onclick="send_prof_details()">
                                                 Submit
                                             </button>
                                         </div>
@@ -625,7 +623,7 @@
                                     <div class="form-group">
                                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                             <button class="btn btn-primary" type="reset">Reset</button>
-                                            <button type="submit" class="btn btn-success" onclick="send_details()">
+                                            <button type="submit" class="btn btn-success" onclick="">
                                                 Submit
                                             </button>
                                         </div>
@@ -695,6 +693,7 @@
 <script src="../build/js/custom.min.js"></script>
 
 <script>
+
     $(document).ready(function () {
         $('#department').css("display", "none");
         $('#professor').css("display", "none");
@@ -750,6 +749,29 @@
             addDepElement.css("display", "none");
         }
     }
+
+
+    function send_prof_details() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                if (xhttp.responseText === 'TRUE') {
+                    $('#result').append(
+                        "<div class='alert alert-success'>Professor Added</div>"
+                    );
+                } else {
+                    $('#result').append(
+                        "<div class='alert alert-danger'>Professor Adding Failed</div>"
+                    );
+                }
+            }
+        };
+
+        xhttp.open("POST", "ProfessorController.php", true);
+        xhttp.send("Empid=" + $("#empa-id").val() + "&Name=" + $("#name").val() + "&Office=" + $("#office").val() + "&Phone=" + $("#mobile").val() + "&DepartmentCode=" + $("#dep-code:selected").text() + "&action=add");
+
+    }
+
 </script>
 
 </body>

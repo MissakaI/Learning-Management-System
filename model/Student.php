@@ -6,3 +6,6 @@
  * Time: 4:38 PM
  */
 
+class Student{
+
+}

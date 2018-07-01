@@ -16,19 +16,19 @@ if (preg_match('/^\d{4}\/[A-Za-z]{2}\/\d{3}$/', $username) === 1) {
 } else if ($username == 'librarian') {
     echo '
     <script>
-    window.location.replace("http://localhost/Learning_Management_System/web/librarian.php");
+    window.location.replace("/playground/Learning-Management-System/web/librarian.php");
     </script>
     ';
 } else if ($username == 'academic-officer') {
     echo '
     <script>
-    window.location.replace("http://localhost/Learning_Management_System/web/academic-officer.php");
+    window.location.replace("/playground/Learning-Management-System/web/librarian.php");
     </script>
     ';
 } else if ($username == 'root') {
     echo '
     <script>
-    window.location.replace("http://localhost/Learning_Management_System/web/root.php");
+    window.location.replace("/playground/Learning-Management-System/web/root.php");
     </script>
     ';
 }else if ($username == 'student') {
