@@ -16,7 +16,7 @@ if (preg_match('/^\d{4}\/[A-Za-z]{2}\/\d{3}$/', $username) === 1) {
 } else if ($username == 'librarian') {
     echo '
     <script>
-    window.location.replace("/playground/Learning-Management-System/web/librarian.php");
+    window.location.replace("http://localhost/Learning_Management_System/web/librarian.php");
     </script>
     ';
 } else if ($username == 'academic-officer') {
@@ -37,7 +37,7 @@ if (preg_match('/^\d{4}\/[A-Za-z]{2}\/\d{3}$/', $username) === 1) {
     window.location.replace("http://localhost/Learning_Management_System/web/manage-student.php");
     </script>
     ';
-}else if ($username == 'profssor') {
+} else if ($username == 'professor') {
     echo '
     <script>
     window.location.replace("http://localhost/Learning_Management_System/web/professor.php");

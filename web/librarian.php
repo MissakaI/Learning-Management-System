@@ -48,7 +48,7 @@
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
-                        <h2>John Doe</h2>
+                        <h2>Librarian</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -111,7 +111,7 @@
                         <li class="">
                             <a href="javascript:" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="images/img.jpg" alt="">John Doe
+                                <img src="images/img.jpg" alt="">Librarian
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -212,10 +212,10 @@
                                                 <input type="checkbox" class="flat" name="table_records">
                                             </td>
                                             <td class=" ">121000040</td>
-                                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                                            <td class=" ">121000210 <i class="success fa fa-long-arrow-up"></i></td>
-                                            <td class=" ">John Blank L</td>
-                                            <td class=" ">Paid</td>
+                                            <td class=" ">Introduction to Database Systems</td>
+                                            <td class=" ">ABC publications</td>
+                                            <td class=" ">2011</td>
+                                            <td class=" ">N/A</td>
                                         </tr>
 
                                         </tbody>
@@ -384,7 +384,7 @@
         }
     );
 
-    countries = {DS: "Denver Simonsz", JD: "Janitha Dananajaya", MI: "Missaka Iddamalgoda"};
+    countries = {DS: "Dr.Senavirathna", JD: "Janitha Dananajaya", MI: "Missaka Iddamalgoda"};
 
     function init_autocomplete() {
 
