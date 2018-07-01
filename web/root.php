@@ -48,7 +48,7 @@
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
-                        <h2>John Doe</h2>
+                        <h2>Admisitrator</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -60,11 +60,6 @@
                     <div class="menu_section">
                         <h3>General</h3>
                         <ul class="nav side-menu">
-                            <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="#">Dashboard</a></li>
-                                </ul>
-                            </li>
                             <li><a onclick="navClick('professor')"><i class="fa fa-home"></i> Professor </a></li>
                             <li><a onclick="navClick('department')"><i class="fa fa-home"></i> Department </a></li>
                             <li><a onclick="navClick('company')"><i class="fa fa-home"></i> Company </a></li>
@@ -104,7 +99,7 @@
                         <li class="">
                             <a href="javascript:" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="images/img.jpg" alt="">John Doe
+                                <img src="images/img.jpg" alt="">Administrate
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -128,7 +123,7 @@
         <div class="right_col" role="main">
             <div class="">
                 <!-- top tiles -->
-                <div class="row tile_count" id="dash">
+                <!--<div class="row tile_count" id="dash">
                     <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
                         <span class="count_top"><i class="fa fa-user"></i> Total Users</span>
                         <div class="count">2500</div>
@@ -164,7 +159,7 @@
                         <span class="count_bottom"><i class="green"><i
                                         class="fa fa-sort-asc"></i>34% </i> From last Week</span>
                     </div>
-                </div>
+                </div>-->
                 <!-- /top tiles -->
                 <!-- Start of dashboard views -->
 
@@ -198,13 +193,10 @@
                                     <table class="table table-striped jambo_table">
                                         <thead>
                                         <tr class="headings">
-                                            <!--                                            <th>-->
-                                            <!--                                                <input type="checkbox" id="check-all" class="flat">-->
-                                            <!--                                            </th>-->
                                             <th class="column-title">Emp Id</th>
                                             <th class="column-title">Name</th>
                                             <th class="column-title">Office</th>
-                                            <th class="column-title">Age</th>
+                                            <th class="column-title">Seniority</th>
                                             <th class="column-title">Start date</th>
                                             <th class="column-title">Salary</th>
                                             <th class="column-title" colspan="2">Actions</th>
@@ -214,15 +206,12 @@
 
                                         <tbody>
                                         <tr class="even pointer">
-                                            <!--                                            <td class="a-center ">-->
-                                            <!--                                                <input type="checkbox" class="flat" name="table_records">-->
-                                            <!--                                            </td>-->
-                                            <td class=" ">121000040</td>
-                                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                                            <td class=" ">121000210 <i class="success fa fa-long-arrow-up"></i></td>
-                                            <td class=" ">John Blank L</td>
-                                            <td class=" ">Paid</td>
-                                            <td class=" ">Paid</td>
+                                            <td class=" ">EP001</td>
+                                            <td class=" ">Dr. Senavirathna</td>
+                                            <td class=" ">Office 1<i class="success fa fa-long-arrow-up"></i></td>
+                                            <td class=" ">3</td>
+                                            <td class=" ">2015-03-02</td>
+                                            <td class=" ">LKR 150000</td>
                                             <td>
                                                 <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a
                                                             href="#/pencil-square-o"><i class="fa fa-edit"></i></a>
@@ -277,22 +266,19 @@
                                             <th class="column-title">Department Id</th>
                                             <th class="column-title">Name</th>
                                             <th class="column-title">Location</th>
-                                            <th class="column-title">Mobile No</th>
-                                            <th class="column-title">Admin ID</th>
+                                            <th class="column-title">Contact No</th>
+                                            <th class="column-title">Department Head</th>
                                             <th class="column-title" colspan="2">Actions</th>
                                         </tr>
                                         </thead>
 
                                         <tbody>
                                         <tr class="even pointer">
-                                            <!--                                            <td class="a-center ">-->
-                                            <!--                                                <input type="checkbox" class="flat" name="table_records">-->
-                                            <!--                                            </td>-->
-                                            <td class=" ">121000040</td>
-                                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                                            <td class=" ">121000210 <i class="success fa fa-long-arrow-up"></i></td>
-                                            <td class=" ">John Blank L</td>
-                                            <td class=" ">Paid</td>
+                                            <td class=" ">DP001</td>
+                                            <td class=" ">Computation</td>
+                                            <td class=" ">Building C</td>
+                                            <td class=" ">Dr. Senavirathna</td>
+                                            <td class=" ">0111111111</td>
                                             <td>
                                                 <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a
                                                             href="#/pencil-square-o"><i class="fa fa-edit"></i></a>
@@ -345,23 +331,19 @@
                                         <thead>
                                         <tr class="headings">
                                             <th class="column-title">Comapny Name</th>
-                                            <th class="column-title">Semeter</th>
                                             <th class="column-title">Year</th>
+                                            <th class="column-title">Semester</th>
                                             <th class="column-title">Company Manager Name</th>
-                                            <th class="column-title">Username</th>
-                                            <th class="column-title">Password</th>
                                             <th class="column-title" colspan="2">Actions</th>
                                         </tr>
                                         </thead>
 
                                         <tbody>
                                         <tr class="even pointer">
-                                            <td class=" ">121000040</td>
-                                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                                            <td class=" ">121000210 <i class="success fa fa-long-arrow-up"></i></td>
-                                            <td class=" ">John Blank L</td>
-                                            <td class=" ">Paid</td>
-                                            <td class=" ">Paid</td>
+                                            <td class=" ">Sample Inc</td>
+                                            <td class=" ">3</td>
+                                            <td class=" ">2</td>
+                                            <td class=" ">John Blank</td>
                                             <td>
                                                 <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a
                                                             href="#/pencil-square-o"><i class="fa fa-edit"></i></a>
@@ -510,7 +492,8 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="mobile" class="control-label col-md-3 col-sm-3 col-xs-12">Mobile No:
+                                        <label for="mobile" class="control-label col-md-3 col-sm-3 col-xs-12">Contact
+                                            No:
                                             <span class="required">*</span>
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
@@ -523,10 +506,10 @@
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <select class="form-control">
                                                 <option>Choose option</option>
-                                                <option>Option one</option>
-                                                <option>Option two</option>
-                                                <option>Option three</option>
-                                                <option>Option four</option>
+                                                <!--                                                <option>Option one</option>-->
+                                                <!--                                                <option>Option two</option>-->
+                                                <!--                                                <option>Option three</option>-->
+                                                <!--                                                <option>Option four</option>-->
                                             </select>
                                         </div>
                                     </div>
@@ -599,24 +582,6 @@
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <input id="com-man-name" class="form-control col-md-7 col-xs-12" type="text"
                                                    name="com-man-name">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="username" class="control-label col-md-3 col-sm-3 col-xs-12">User
-                                            Name: <span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input id="username" class="form-control col-md-7 col-xs-12" type="text"
-                                                   name="username">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password" class="control-label col-md-3 col-sm-3 col-xs-12">Password:
-                                            <span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input id="password" class="form-control col-md-7 col-xs-12" type="password"
-                                                   name="password">
                                         </div>
                                     </div>
                                     <div class="ln_solid"></div>

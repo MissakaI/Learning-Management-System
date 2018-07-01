@@ -30,7 +30,7 @@
     <div class="login_wrapper">
         <div class="animate form login_form">
             <section class="login_content">
-                <form action="root.php" method="post">
+                <form action="http://localhost/Learning_Management_System/controller/LoginController.php" method="post">
                     <h1>Login Form</h1>
                     <div>
                         <input type="text" class="form-control" placeholder="Username" required="" name="username"/>
