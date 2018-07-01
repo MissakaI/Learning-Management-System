@@ -6,8 +6,6 @@
  * Time: 3:23 PM
  */
 
-
-
 $action = $_POST["action"];
 $Empid = $_POST["Empid"];
 $Name = $_POST["Name"];

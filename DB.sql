@@ -1,15 +1,10 @@
-SET @PREV_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS;
-SET FOREIGN_KEY_CHECKS=0;
+DROP DATABASE IF EXISTS lms_ucsc_scs1203;
+CREATE DATABASE lms_ucsc_scs1203;
 
-CREATE TABLE Professor(
-  EmpId CHAR(5) NOT NULL,
-  Name VARCHAR(255) NOT NULL,
-  Office VARCHAR(255) NOT NULL ,
-  Phone INT,
-  DepartmentCode CHAR(5) NOT NULL,
-  CONSTRAINT PRIMARY KEY (EmpId),
-  CONSTRAINT FOREIGN KEY (DepartmentCode) REFERENCES Department(DepartmentCode)
-);
+USE lms_ucsc_scs1203;
+
+SET @PREV_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS;
+SET @@FOREIGN_KEY_CHECKS=0;
 
 INSERT INTO Professor VALUES ('E001','Mr Abc Perera','Office 1',0774343321,'D001')
 
@@ -25,10 +20,22 @@ CREATE TABLE Department(
   CONSTRAINT UNIQUE KEY (Name)
 );
 
-
 INSERT INTO Department VALUES('D001','Department 1','location A', 0772343432,null );
 
 SET FOREIGN_KEY_CHECKS=@PREV_FOREIGN_KEY_CHECKS;
+
+CREATE TABLE Professor(
+  EmpId CHAR(5) NOT NULL,
+  Name VARCHAR(255) NOT NULL,
+  Office VARCHAR(255) NOT NULL ,
+  Phone INT,
+  DepartmentCode CHAR(5) NOT NULL,
+  CONSTRAINT PRIMARY KEY (EmpId),
+  CONSTRAINT FOREIGN KEY (DepartmentCode) REFERENCES Department(DepartmentCode)
+);
+
+
+SET @@FOREIGN_KEY_CHECKS=@PREV_FOREIGN_KEY_CHECKS;
 
 CREATE TABLE Course(
   CourseCode CHAR(5) NOT NULL,
@@ -180,15 +187,34 @@ CREATE TABLE ReturnBook(
 );
 
 
+INSERT INTO Department VALUES('D001','Department 1','location A', 0772343432,E001 );
+INSERT INTO Department VALUES('D002','Department 2','location B',0775684562,E002 );
+INSERT INTO Department VALUES('D003','Department 3','location C',0754568942,E003 );
+INSERT INTO Department VALUES('D004','Department 4','location D',0783459876,E004 );
+INSERT INTO Department VALUES('D005','Department 5','location E',0727538767,E005 );
+INSERT INTO Department VALUES('D006','Department 6','location F',0710875412,E006 );
+INSERT INTO Department VALUES('D007','Department 7','location G',0774343431,E007 );
+INSERT INTO Department VALUES('D008','Department 8','location H',0710170307,E008 );
+INSERT INTO Department VALUES('D009','Department 9','location I',0756501011,E009 );
+INSERT INTO Department VALUES('D010','Department 10','location J',0714735767,E010 );
 
+INSERT INTO Professor VALUES ('E001','Mrs Rani Perera','Office 1',0774343321,'D001');
+INSERT INTO Professor VALUES ('E002','Mrs Ishani Peiris','Office 2',0774343389,'D002');
+INSERT INTO Professor VALUES ('E003','Mr Abhishek Perera','Office 3',0774343334,'D003');
+INSERT INTO Professor VALUES ('E004','Mr Sunil Perera','Office 4',0772343321,'D004');
+INSERT INTO Professor VALUES ('E005','Mr Kamal Perera','Office 5',0774883321,'D005');
+INSERT INTO Professor VALUES ('E006','Mr Nanda Pereda','Office 6',0774773329,'D006');
+INSERT INTO Professor VALUES ('E007','Mr Nimal Perera','Office 7',0774345621,'D007');
+INSERT INTO Professor VALUES ('E008','Mr Bimal Perera','Office 8',0774343300,'D008');
+INSERT INTO Professor VALUES ('E009','Mr Namal Fernando','Office 9',0774343392,'D009');
+INSERT INTO Professor VALUES ('E010','Mrs Mohini Peiris','Office 10',0774343311,'D010');
 
 INSERT INTO Book VALUES ('C How to Program',' 978-0-13-612356-9',' Pearson Education',2010);
 INSERT INTO Book VALUES ('Database Management System','978-0-37-575154-7','Pearson Education',2012);
 INSERT INTO Book VALUES ('Java The Complete Reference, 9th Edition','978-33-75-75154-7','Modern Library',2015);
 
-
-INSERT INTO Student VALUES ('S001','Missaka Iddamalgoda','Ratnapura','Graduate');
-INSERT INTO Student VALUES ('S002','Janitha Dananjaya','Panadura','Graduate');
-INSERT INTO Student VALUES ('S003','Denver Simonsz','Panadura','Graduate');
-INSERT INTO Student VALUES ('S004','Tharindu Athukorala','Ratnapura','Undergraduate');
-INSERT INTO Student VALUES ('S005','Vidurajith Dharshana','Ratnapura','Undergraduate');
+INSERT INTO Student VALUES ('S001','Missaka Iddamalgoda','Ratnapura','status');
+INSERT INTO Student VALUES ('S002','Janitha Dananjaya','Panadura','status');
+INSERT INTO Student VALUES ('S003','Denver Simonsz','Panadura','status');
+INSERT INTO Student VALUES ('S004','Tharindu Athukorala','Ratnapura','status');
+INSERT INTO Student VALUES ('S005','Vidurajith Dharshana','Ratnapura','staus');

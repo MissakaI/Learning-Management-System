@@ -71,13 +71,8 @@
                             <li><a><i class="fa fa-book"></i> Borrow / Return Books <span
                                             class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a onclick="#">Borrow Books</a></li>
+                                    <li><a onclick="navClick('view_lending')">Borrow Books</a></li>
                                     <li><a onclick="navClick('return_books')">Return Books</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-book"></i> Lending Books <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a onclick="navClick('view_lending')">View All Book Details</a></li>
                                 </ul>
                             </li>
                         </ul>

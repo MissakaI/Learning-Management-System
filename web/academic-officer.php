@@ -419,7 +419,7 @@
             }
         };
 
-        xhttp.open("POST", "StudentController.php", true);
+        xhttp.open("POST", "AcademicOfficerController.php", true);
         xhttp.send("Sid=" + $("#st").val() + "&Name=" + $("#name").val() + "&Address=" + $("#office").val() + "&Status=" + $("#mobile").val() + "&Type=" + $("#dep-code:selected").text() + "&action=add");
     }
 
