@@ -31,4 +31,10 @@ if (preg_match('/^2017\/[A-Za-z]{2}\/\d{3}$/', $username) === 1) {
     window.location.replace("http://localhost/Learning_Management_System/web/root.php");
     </script>
     ';
+}else if ($username == 'student') {
+    echo '
+    <script>
+    window.location.replace("http://localhost/Learning_Management_System/web/manage-student.php");
+    </script>
+    ';
 }
