@@ -8,7 +8,7 @@
 
 class Student{
 
-    public function getProfessors(): array
+    public function getStudent(): array
     {
 
     }

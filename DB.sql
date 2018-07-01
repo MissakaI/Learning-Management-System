@@ -11,6 +11,8 @@ CREATE TABLE Professor(
   CONSTRAINT FOREIGN KEY (DepartmentCode) REFERENCES Department(DepartmentCode)
 );
 
+INSERT INTO Professor VALUES ('E001','Mr Abc Perera','Office 1',0774343321,'D001')
+
 CREATE TABLE Department(
   DepartmentCode CHAR(5) NOT NULL,
   Name VARCHAR(255) NOT NULL ,
@@ -22,6 +24,9 @@ CREATE TABLE Department(
   CONSTRAINT UNIQUE KEY (EmpId),
   CONSTRAINT UNIQUE KEY (Name)
 );
+
+
+INSERT INTO Department VALUES('D001','Department 1','location A', 0772343432,null );
 
 SET FOREIGN_KEY_CHECKS=@PREV_FOREIGN_KEY_CHECKS;
 
@@ -45,6 +50,7 @@ CREATE TABLE Book(
   Year INT(4),
   CONSTRAINT PRIMARY KEY (ISBN)
 );
+
 
 CREATE TABLE Author(
   ISBN CHAR(13) NOT NULL ,
@@ -98,6 +104,7 @@ CREATE TABLE Student(
   Status VARCHAR(255),
   CONSTRAINT PRIMARY KEY (StudentID)
 );
+
 
 CREATE TABLE CourseEnrollment(
   StudentID CHAR(10) NOT NULL ,
@@ -171,3 +178,17 @@ CREATE TABLE ReturnBook(
   CONSTRAINT FOREIGN KEY (ISBN,StudentID,BorrowDate) REFERENCES BookBorrow(ISBN,StudentID,BorrowDate)
   ON DELETE CASCADE
 );
+
+
+
+
+INSERT INTO Book VALUES ('C How to Program',' 978-0-13-612356-9',' Pearson Education',2010);
+INSERT INTO Book VALUES ('Database Management System','978-0-37-575154-7','Pearson Education',2012);
+INSERT INTO Book VALUES ('Java The Complete Reference, 9th Edition','978-33-75-75154-7','Modern Library',2015);
+
+
+INSERT INTO Student VALUES ('S001','Missaka Iddamalgoda','Ratnapura','Graduate');
+INSERT INTO Student VALUES ('S002','Janitha Dananjaya','Panadura','Graduate');
+INSERT INTO Student VALUES ('S003','Denver Simonsz','Panadura','Graduate');
+INSERT INTO Student VALUES ('S004','Tharindu Athukorala','Ratnapura','Undergraduate');
+INSERT INTO Student VALUES ('S005','Vidurajith Dharshana','Ratnapura','Undergraduate');
