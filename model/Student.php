@@ -8,4 +8,9 @@
 
 class Student{
 
+    public function getProfessors(): array
+    {
+
+    }
+
 }

@@ -8,7 +8,10 @@
 
 
 $studentCourse = $_GET["action"];
+$id = $_GET["id"];
 
 if($studentCourse == 'existing-course'){
-
+    $courses = new \Course();
+    $value = $courses->getCourseEnrollmentsBy($id);
+    echo $value;
 }
