@@ -280,7 +280,7 @@
                                     <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                         <button class="btn btn-primary" type="button">Cancel</button>
                                         <button class="btn btn-primary" type="reset">Reset</button>
-                                        <button type="submit" class="btn btn-success" id="submit">Submit</button>
+                                        <button type="submit" class="btn btn-success" id="submit">Update</button>
                                     </div>
                                 </div>
                             </form>
@@ -301,11 +301,11 @@
                                     <th>
                                         <input type="checkbox" id="check-all" class="flat">
                                     </th>
-                                    <th class="column-title">ISBN no </th>
-                                    <th class="column-title">Title</th>
-                                    <th class="column-title">Publisher</th>
-                                    <th class="column-title">Year</th>
-                                    <th class="column-title">Author</th>
+                                    <th class="column-title">Course Name </th>
+                                    <th class="column-title">Credit Hours</th>
+                                    <th class="column-title">College</th>
+                                    <th class="column-title">Prerequisity Course</th>
+                                    <th class="column-title">Department</th>
                                 </tr>
                                 </thead>
 
