@@ -48,7 +48,7 @@
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
-                        <h2>John Doe</h2>
+                        <h2>2017/CS/500</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -56,19 +56,13 @@
                 <br/>
 
                 <!-- sidebar menu -->
-
-
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                     <div class="menu_section">
-                        <h3>Student</h3>
+                        <h3>General</h3>
                         <ul class="nav side-menu">
-                            <li><a><i class="fa fa-book"></i> Manage Course Enrollment <span
-                                            class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a onclick="navClick('add')">Enter Course Enrollment Details</a></li>
-                                    <li><a onclick="navClick('view')">View All Course Enrollment Details</a></li>
-                                </ul>
-                            </li>
+                            <li><a onclick="navClick('existing-course')"><i class="fa fa-home"></i> My Courses </a></li>
+                            <li><a onclick="navClick('new-course')"><i class="fa fa-home"></i> New Courses </a></li>
+                            <li><a onclick="navClick('company')"><i class="fa fa-home"></i> Company </a></li>
                         </ul>
                     </div>
                 </div>
@@ -105,7 +99,7 @@
                         <li class="">
                             <a href="javascript:" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="images/img.jpg" alt="">John Doe
+                                <img src="images/img.jpg" alt="">2017/CS/500
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -128,53 +122,16 @@
         <!-- page content -->
         <div class="right_col" role="main">
             <div class="">
-                <div class="page-title">
-                    <div class="title_left">
-                        <h3>Course Enrollment Management</h3>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-                <!-- top tiles -->
-                <!--<div class="row tile_count">
-                    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-user"></i> Total Users</span>
-                        <div class="count">2500</div>
-                        <span class="count_bottom"><i class="green">4% </i> From last Week</span>
-                    </div>
-                    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-clock-o"></i> Average Time</span>
-                        <div class="count">123.50</div>
-                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
-                    </div>
-                    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-user"></i> Total Males</span>
-                        <div class="count green">2,500</div>
-                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-                    </div>
-                    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-user"></i> Total Females</span>
-                        <div class="count">4,567</div>
-                        <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span>
-                    </div>
-                    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-user"></i> Total Collections</span>
-                        <div class="count">2,315</div>
-                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-                    </div>
-                    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-user"></i> Total Connections</span>
-                        <div class="count">7,325</div>
-                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-                    </div>
-                </div>-->
-                <!-- /top tiles -->
 
-                <div class="row">
+                <!-- Start of dashboard views -->
+
+                <!--Start of current enrollments view-->
+                <div class="row" id="enrollments">
                     <div class="col-md-12 col-sm-12 col-xs-12" id="view-books">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>All Course Enrollments
-                                    <small>List of currently available course enrollments</small>
+                                <h2>My Courses
+                                    <small>List of course enrollments</small>
                                 </h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -186,141 +143,153 @@
                             </div>
                             <div class="x_content">
                                 <div class="table-responsive">
-                                    <table class="table table-striped jambo_table bulk_action">
+                                    <table class="table table-striped jambo_table">
                                         <thead>
                                         <tr class="headings">
-                                            <th>
-                                                <input type="checkbox" id="check-all" class="flat">
-                                            </th>
-                                            <th class="column-title">Student ID</th>
-                                            <th class="column-title">Course Section</th>
-                                            <th class="column-title">Grande</th>
+                                            <!--                                            <th>-->
+                                            <!--                                                <input type="checkbox" id="check-all" class="flat">-->
+                                            <!--                                            </th>-->
+                                            <th class="column-title">Course ID</th>
+                                            <th class="column-title">Course</th>
+                                            <th class="column-title">Section</th>
+                                            <th class="column-title">Year</th>
+                                            <th class="column-title">Semester</th>
+                                            <th class="column-title">Grade</th>
+                                            <!--                                            <th class="column-title"></th>-->
                                         </tr>
                                         </thead>
 
                                         <tbody>
                                         <tr class="even pointer">
-                                            <td class="a-center ">
-                                                <input type="checkbox" class="flat" name="table_records">
+                                            <td class=" ">3</td>
+                                            <td class=" ">Databse</td>
+                                            <td class=" ">1</td>
+                                            <td class=" ">1</td>
+                                            <td class=" ">1</td>
+                                            <td class=" ">N/A</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of professor view-->
+
+                <!--Start of new enrollment view-->
+                <div class="row" id="new-enrollment">
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="view-books">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Available Courses
+                                    <small>Course Sections that you can apply</small>
+                                </h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="table-responsive">
+                                    <table class="table table-striped jambo_table">
+                                        <thead>
+                                        <tr class="headings">
+                                            <th class="column-title">Course ID</th>
+                                            <th class="column-title">Course</th>
+                                            <th class="column-title">Section</th>
+                                            <th class="column-title">Year</th>
+                                            <th class="column-title">Semester</th>
+                                            <th class="column-title">Professor</th>
+                                            <th class="column-title">Actions</th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <tr class="even pointer">
+                                            <td class=" ">3</td>
+                                            <td class=" ">Database</td>
+                                            <td class=" ">2</td>
+                                            <td class=" ">1</td>
+                                            <td class=" ">2</td>
+                                            <td class=" ">Dr. Senevirathna</td>
+                                            <td>
+                                                <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a
+                                                            href="#/pencil-square-o"><i
+                                                                class="fa fa-plus-square"></i></a>
+                                                </div>
                                             </td>
-                                            <td class=" ">121000040</td>
-                                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                                            <td class=" ">121000210 <i class="success fa fa-long-arrow-up"></i></td>
                                         </tr>
 
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="ln_solid"></div>
-                                <div class="form-group">
-                                    <div class="col-md-2 col-sm-2 col-xs-12 col-sm-offset-9 col-md-offset-9 col-lg-offset-10">
-                                        <button type="button" class="btn btn-danger left">Remove Selected Books</button>
-                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of new enrollment view-->
+
+                <!--Start of current enrollments view-->
+                <div class="row" id="company">
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="view-books">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Industry Sessions
+                                    <!--                                    <small>List of course enrollments</small>-->
+                                </h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="table-responsive">
+                                    <table class="table table-striped jambo_table">
+                                        <thead>
+                                        <tr class="headings">
+                                            <!--                                            <th>-->
+                                            <!--                                                <input type="checkbox" id="check-all" class="flat">-->
+                                            <!--                                            </th>-->
+                                            <th class="column-title">Company Name</th>
+                                            <th class="column-title">Year</th>
+                                            <th class="column-title">Semester</th>
+                                            <th class="column-title">Assesment</th>
+                                            <!--                                            <th class="column-title"></th>-->
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <tr class="even pointer">
+                                            <td class=" ">Sample Inc.</td>
+                                            <td class=" ">3</td>
+                                            <td class=" ">2</td>
+                                            <td class=" ">N/A</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="clearfix"></div>
+                <!--End of professor view-->
 
-                <!-- Start of dashboard view -->
-                <div class="row" id="add-book">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="x_panel">
-                            <div class="x_title">
-                                <h2>Enter Course Enrollment Details
-                                    <small>Add new course enrollment to the system.</small>
-                                </h2>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="x_content">
-                                <br/>
-                                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Book
-                                            Title: <span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" id="first-name" required="required"
-                                                   class="form-control col-md-7 col-xs-12">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Student
-                                            ID
-                                            :
-                                            <span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" id="last-name" name="last-name" required="required"
-                                                   class="form-control col-md-7 col-xs-12">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Course
-                                            Section:
-                                            <span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-2 col-sm-12 col-xs-12 form-group">
-                                            <input id="middle-name" class="form-control col-md-2 col-xs-3" type="text"
-                                                   name="middle-name" placeholder="Course">8
-                                        </div>
-
-                                        <div class="col-md-1 col-sm-12 col-xs-12 form-group">
-                                            <input id="middle-name" class="form-control col-md-2 col-xs-3" type="text"
-                                                   name="middle-name" placeholder="Section Number">
-                                        </div>
-
-                                        <div class="col-md-2 col-sm-12 col-xs-12 form-group">
-                                            <input id="middle-name" class="form-control col-md-2 col-xs-3" type="text"
-                                                   name="middle-name" placeholder="Semester">
-                                        </div>
-
-                                        <div class="col-md-1 col-sm-12 col-xs-12 form-group">
-                                            <input id="middle-name" class="form-control col-md-2 col-xs-3" type="text"
-                                                   name="middle-name" placeholder="Year">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Grade: <span
-                                                    class="required">*</span></label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input id="author" type="text" name="country"
-                                                   class="form-control col-md-10 autocomplete-custom-append"/>
-                                        </div>
-                                        <br><br>
-                                    </div>
-                                    <div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12" id="authors-list">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="ln_solid"></div>
-                                    <div class="form-group">
-                                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                            <button class="btn btn-primary" type="button">Cancel</button>
-                                            <button class="btn btn-primary" type="reset">Reset</button>
-                                            <button type="submit" class="btn btn-success" id="submit">Submit</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- End of dashboard view -->
+                <!-- End of dashboard views -->
             </div>
+            <!-- /page content -->
         </div>
-        <!-- /page content -->
 
         <!-- footer content -->
         <footer>
             <div class="pull-right">
-                Learning Mangement System
+                Learning Management System
             </div>
             <div class="clearfix"></div>
         </footer>
@@ -366,94 +335,37 @@
 <script src="../vendors/moment/min/moment.min.js"></script>
 <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-<script src="../vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
 <!-- Custom Theme Scripts -->
 <script src="../build/js/custom.min.js"></script>
+
 <script>
-
-    $(document).ready(
-        function () {
-            init_autocomplete();
-            $('#add-book').css('display', 'none');
-        }
-    );
-
-    countries = {DS: "Denver Simonsz", JD: "Janitha Dananajaya", MI: "Missaka Iddamalgoda"};
-
-    function init_autocomplete() {
-
-        if (typeof ($.fn.autocomplete) === 'undefined') {
-            return;
-        }
-        var countriesArray = $.map(countries, function (value, key) {
-            return {
-                value: value,
-                data: key
-            };
-        });
-
-        // initialize autocomplete with custom appendTo
-        $('.autocomplete-custom-append').autocomplete({
-            lookup: countriesArray
-        });
-    }
-
-    $('#submit').click(function (event) {
-
-        var children = $('#authors-list').children();
-
-        var isExist = false;
-        var isExistInArray = false;
-
-        for (country in countries) {
-            if (countries[country] === $('#author').val()) {
-                isExistInArray = true;
-                break;
-            }
-        }
-
-        for (var i = 0; i < children.size(); i++) {
-            var childval = $(children[i]).text();
-            var inputval = $('#author').val();
-
-            var value = childval.split(" x");
-
-            if (isExistInArray) {
-                if (value[0] === inputval) {
-                    isExist = true;
-                    break;
-                }
-            }
-        }
-        if (!isExist && isExistInArray) {
-            $('#authors-list').append(
-                "<span class='tag'><span>" + $('#author').val() + "</span><a title='Removing tag'><span onclick='removeAuthor(this)' style='cursor: pointer'> x</span></a></span>"
-            );
-        }
-
-        event.preventDefault();
+    $(document).ready(function () {
+        $('#new-enrollment').css("display", "none");
+        $('#enrollments').css("display", "none");
+        $('#company').css("display", "none");
     });
-
-    function removeAuthor(value) {
-        $($(value).parents(".tag")).remove(0)
-    }
 
     function navClick(value) {
         console.log(value);
-        let addelement = $('#add-book');
-        let viewelement = $('#view-books');
+        let existelement = $('#enrollments');
+        let newelement = $('#new-enrollment');
+        let compelement = $('#company');
 
-        if (value === 'add') {
-            addelement.css("display", "block");
-            viewelement.css("display", "none");
-        } else if (value === 'view') {
-            addelement.css("display", "none");
-            viewelement.css("display", "block");
+        if (value === 'existing-course') {
+            existelement.css("display", "block");
+            newelement.css("display", "none");
+            compelement.css("display", "none");
+        } else if (value === 'new-course') {
+            existelement.css("display", "none");
+            newelement.css("display", "block");
+            compelement.css("display", "none");
+        } else if (value === 'company') {
+            existelement.css("display", "none");
+            newelement.css("display", "none");
+            compelement.css("display", "block");
         }
     }
-
 </script>
-
 
 </body>
 </html>
