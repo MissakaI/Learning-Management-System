@@ -187,7 +187,9 @@
                             <div class="x_content">
                                 <div class="form-group">
                                     <div class="col-md-2 col-sm-2 col-xs-12">
-                                        <button type="button" class="btn btn-primary left">Add new professor</button>
+                                        <button onclick="btnClick('professor')" id="btn-add-professor" type="button"
+                                                class="btn btn-primary left">Add new professor
+                                        </button>
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
@@ -261,7 +263,9 @@
                             <div class="x_content">
                                 <div class="form-group">
                                     <div class="col-md-2 col-sm-2 col-xs-12">
-                                        <button type="button" class="btn btn-primary left">Add new Faculty</button>
+                                        <button onclick="btnClick('department')" id="btn-add-department" type="button"
+                                                class="btn btn-primary left">Add new Department
+                                        </button>
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
@@ -329,7 +333,8 @@
                             <div class="x_content">
                                 <div class="form-group">
                                     <div class="col-md-2 col-sm-2 col-xs-12">
-                                        <button type="button" class="btn btn-primary left">Add new Company Session
+                                        <button onclick="btnClick('company')" id="btn-add-company" type="button"
+                                                class="btn btn-primary left">Add new Company Session
                                         </button>
                                     </div>
                                 </div>
@@ -460,6 +465,178 @@
                 </div>
                 <!--End of add-professor view-->
 
+                <!--Start of add-department view-->
+                <div class="row" id="add-department">
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="view-books">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Add New Department to System
+                                    <small>Fill the form below to proceed</small>
+                                </h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="emp-id">Department
+                                            Code: <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="text" id="dep-code" required="required"
+                                                   class="form-control col-md-7 col-xs-12">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name: <span
+                                                    class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="text" id="name" name="name" required="required"
+                                                   class="form-control col-md-7 col-xs-12">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="loaction" class="control-label col-md-3 col-sm-3 col-xs-12">Location:
+                                            <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="location" class="form-control col-md-7 col-xs-12" type="text"
+                                                   name="location">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="mobile" class="control-label col-md-3 col-sm-3 col-xs-12">Mobile No:
+                                            <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="office" class="form-control col-md-7 col-xs-12" type="text"
+                                                   name="mobile">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Admin ID</label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <select class="form-control">
+                                                <option>Choose option</option>
+                                                <option>Option one</option>
+                                                <option>Option two</option>
+                                                <option>Option three</option>
+                                                <option>Option four</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="ln_solid"></div>
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                            <button class="btn btn-primary" type="reset">Reset</button>
+                                            <button type="submit" class="btn btn-success" onclick="send_details()">
+                                                Submit
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of add-department view-->
+
+                <!--Start of add-company view-->
+                <div class="row" id="add-company">
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="view-books">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Add New Professor to System
+                                    <small>Fill the form below to proceed</small>
+                                </h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="com-name">Department
+                                            Name: <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="text" id="com-name" required="required"
+                                                   class="form-control col-md-7 col-xs-12">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="semeter">Semester:
+                                            <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="text" id="semester" name="semester" required="required"
+                                                   class="form-control col-md-7 col-xs-12">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="year" class="control-label col-md-3 col-sm-3 col-xs-12">Year: <span
+                                                    class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="year" class="form-control col-md-7 col-xs-12" type="text"
+                                                   name="year">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="com-man-name" class="control-label col-md-3 col-sm-3 col-xs-12">Company
+                                            Manager Name: <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="com-man-name" class="form-control col-md-7 col-xs-12" type="text"
+                                                   name="com-man-name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="username" class="control-label col-md-3 col-sm-3 col-xs-12">User
+                                            Name: <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="username" class="form-control col-md-7 col-xs-12" type="text"
+                                                   name="username">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password" class="control-label col-md-3 col-sm-3 col-xs-12">Password:
+                                            <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="password" class="form-control col-md-7 col-xs-12" type="password"
+                                                   name="password">
+                                        </div>
+                                    </div>
+                                    <div class="ln_solid"></div>
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                            <button class="btn btn-primary" type="reset">Reset</button>
+                                            <button type="submit" class="btn btn-success" onclick="send_details()">
+                                                Submit
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of add-company view-->
+
                 <!-- End of dashboard views -->
             </div>
             <!-- /page content -->
@@ -522,26 +699,55 @@
         $('#department').css("display", "none");
         $('#professor').css("display", "none");
         $('#company').css("display", "none");
+        $('#add-professor').css("display", "none");
+        $('#add-department').css("display", "none");
+        $('#add-company').css("display", "none");
     });
+
+    function btnClick(value) {
+        let depelement = $('#add-department');
+        let profelement = $('#add-professor');
+        let compelement = $('#add-company');
+
+        if (value === 'department') {
+            depelement.css("display", "block");
+            depelement.focus();
+        } else if (value === 'professor') {
+            profelement.css("display", "block");
+            profelement.focus();
+        } else if (value === 'company') {
+            compelement.css("display", "block");
+            compelement.focus();
+        }
+    }
 
     function navClick(value) {
         console.log(value);
         let depelement = $('#department');
         let profelement = $('#professor');
         let compelement = $('#company');
+        let addDepElement = $('#add-department');
+        let addComElement = $('#add-company');
+        let addProfElement = $('#add-professor');
 
         if (value === 'department') {
             depelement.css("display", "block");
             profelement.css("display", "none");
             compelement.css("display", "none");
+            addComElement.css("display", "none");
+            addProfElement.css("display", "none");
         } else if (value === 'professor') {
             depelement.css("display", "none");
             profelement.css("display", "block");
             compelement.css("display", "none");
+            addDepElement.css("display", "none");
+            addComElement.css("display", "none");
         } else if (value === 'company') {
             depelement.css("display", "none");
             profelement.css("display", "none");
             compelement.css("display", "block");
+            addProfElement.css("display", "none");
+            addDepElement.css("display", "none");
         }
     }
 </script>
