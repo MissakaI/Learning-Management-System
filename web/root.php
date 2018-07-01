@@ -205,7 +205,7 @@
                                         </thead>
 
                                         <tbody>
-                                        <tr class="even pointer">
+                                       <!-- <tr class="even pointer">
                                             <td class=" ">EP001</td>
                                             <td class=" ">Dr. Senavirathna</td>
                                             <td class=" ">Office 1<i class="success fa fa-long-arrow-up"></i></td>
@@ -223,7 +223,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-
+-->
                                         </tbody>
                                     </table>
                                 </div>
@@ -273,7 +273,7 @@
                                         </thead>
 
                                         <tbody>
-                                        <tr class="even pointer">
+                                       <!-- <tr class="even pointer">
                                             <td class=" ">DP001</td>
                                             <td class=" ">Computation</td>
                                             <td class=" ">Building C</td>
@@ -290,7 +290,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-
+-->
                                         </tbody>
                                     </table>
                                 </div>
@@ -339,22 +339,6 @@
                                         </thead>
 
                                         <tbody>
-                                        <tr class="even pointer">
-                                            <td class=" ">Sample Inc</td>
-                                            <td class=" ">3</td>
-                                            <td class=" ">2</td>
-                                            <td class=" ">John Blank</td>
-                                            <td>
-                                                <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a
-                                                            href="#/pencil-square-o"><i class="fa fa-edit"></i></a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a
-                                                            href="#/pencil-square-o"><i class="fa fa-remove"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
 
                                         </tbody>
                                     </table>
@@ -534,7 +518,7 @@
                     <div class="col-md-12 col-sm-12 col-xs-12" id="view-books">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Add New Professor to System
+                                <h2>Add New Company to System
                                     <small>Fill the form below to proceed</small>
                                 </h2>
                                 <ul class="nav navbar-right panel_toolbox">
@@ -549,7 +533,7 @@
                                 <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="com-name">Department
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="com-name">Company
                                             Name: <span class="required">*</span>
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
@@ -661,7 +645,7 @@
 
     $(document).ready(function () {
         $('#department').css("display", "none");
-        $('#professor').css("display", "none");
+        $('#professor').css("display", "block");
         $('#company').css("display", "none");
         $('#add-professor').css("display", "none");
         $('#add-department').css("display", "none");
@@ -702,18 +686,59 @@
             compelement.css("display", "none");
             addComElement.css("display", "none");
             addProfElement.css("display", "none");
+
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    if (xhttp.responseText === 'TRUE') {
+                        $('#result').append(
+                            "<div class='alert alert-success'>Professor Added</div>"
+                        );
+                    } else {
+                        $('#result').append(
+                            "<div class='alert alert-danger'>Professor Adding Failed</div>"
+                        );
+                    }
+                }
+            };
+
+            xhttp.open("POST", "DepartmentController.php?action=load-department", true);
+            xhttp.send();
         } else if (value === 'professor') {
             depelement.css("display", "none");
             profelement.css("display", "block");
             compelement.css("display", "none");
             addDepElement.css("display", "none");
             addComElement.css("display", "none");
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+
+                }
+            };
+
+            xhttp.open("POST", "ProfessorController.php?action=load-professor", true);
+            xhttp.send();
+
+
         } else if (value === 'company') {
             depelement.css("display", "none");
             profelement.css("display", "none");
             compelement.css("display", "block");
             addProfElement.css("display", "none");
             addDepElement.css("display", "none");
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+
+                }
+            };
+
+            xhttp.open("POST", "CompanyController.php?action=load-company", true);
+            xhttp.send();
         }
     }
 
@@ -722,15 +747,7 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                if (xhttp.responseText === 'TRUE') {
-                    $('#result').append(
-                        "<div class='alert alert-success'>Professor Added</div>"
-                    );
-                } else {
-                    $('#result').append(
-                        "<div class='alert alert-danger'>Professor Adding Failed</div>"
-                    );
-                }
+
             }
         };
 
@@ -745,14 +762,16 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                console.log(xhttp.responseText);
+                var obj = JSON.parse(xhttp.responseText);
+                console.log(obj);
             }
         };
 
         xhttp.open("GET", "../controller/DepartmentController.php?action=view-all", true);
         xhttp.send();
-
     }
+
+
 
 </script>
 

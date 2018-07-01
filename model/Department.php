@@ -7,7 +7,11 @@
  * Time: 1:04 AM
  */
 
-namespace model;
+namespace DepartmentModel;
+
+include_once($_SERVER['DOCUMENT_ROOT'] . '/playground/Learning-Management-System' . '/model/DBConnection.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/playground/Learning-Management-System' . '/model/bo/DepartmentBO.php');
+use \ConnectionModel\DBConnection;
 
 class Department
 {
@@ -19,7 +23,11 @@ class Department
         if ($resultSet->num_rows > 0) {
             $arr = array();
             while ($row = $resultSet->fetch_assoc()) {
-                $bo = new \Department\DepartmentBO($row["DepartmentCode"], $row["Name"], $row["Location"], $row["Phone"], $row["EmpId"]);
+                if ($row["EmpId"] == NULL)
+                    $bo = new \Department\DepartmentBO($row["DepartmentCode"], $row["Name"], $row["Location"], $row["Phone"], "");
+                else{
+                    $bo = new \Department\DepartmentBO($row["DepartmentCode"], $row["Name"], $row["Location"], $row["Phone"], "");
+                }
                 array_push($arr, $bo);
             }
             return $arr;

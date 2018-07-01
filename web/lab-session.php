@@ -202,17 +202,7 @@
                                         </thead>
 
                                         <tbody>
-                                        <tr class="even pointer">
-                                            <td class="a-center ">
-                                                <input type="checkbox" class="flat" name="table_records">
-                                            </td>
-                                            <td class=" ">121000040</td>
-                                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                                            <td class=" ">121000210 <i class="success fa fa-long-arrow-up"></i></td>
-                                            <td class=" ">John Blank L</td>
-                                            <td class=" ">Paid</td>
-                                            <td class=" ">Paid</td>
-                                        </tr>
+
 
                                         </tbody>
                                     </table>
@@ -456,6 +446,16 @@
         } else if (value === 'view') {
             addelement.css("display", "none");
             viewelement.css("display", "block");
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+
+                }
+            };
+
+            xhttp.open("POST", "LabSessionController.php?action=load-lab-session", true);
+            xhttp.send();
         }
     }
 

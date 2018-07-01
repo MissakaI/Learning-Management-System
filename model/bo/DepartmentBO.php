@@ -1,6 +1,8 @@
 <?php
 
 namespace Department;
+
+
 /**
  * Created by IntelliJ IDEA.
  * User: Missaka Iddamalgoda

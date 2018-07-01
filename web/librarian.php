@@ -207,16 +207,7 @@
                                         </thead>
 
                                         <tbody>
-                                        <tr class="even pointer">
-                                            <td class="a-center ">
-                                                <input type="checkbox" class="flat" name="table_records">
-                                            </td>
-                                            <td class=" ">121000040</td>
-                                            <td class=" ">Introduction to Database Systems</td>
-                                            <td class=" ">ABC publications</td>
-                                            <td class=" ">2011</td>
-                                            <td class=" ">N/A</td>
-                                        </tr>
+
 
                                         </tbody>
                                     </table>

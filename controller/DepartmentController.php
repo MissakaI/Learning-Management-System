@@ -6,13 +6,14 @@
  * Time: 3:10 PM
  */
 
-//use model\Department;
+//require('.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/playground/Learning-Management-System' . '/model/Department.php');
 
 $acttion = $_GET["action"];
 
 
 if($acttion == 'view-all'){
-    $DeparmentModel = new model\Department();
+    $DeparmentModel = new DepartmentModel\Department();
     $value = $DeparmentModel->getDepartments();
-    echo $value;
+    echo json_encode($value);
 }
