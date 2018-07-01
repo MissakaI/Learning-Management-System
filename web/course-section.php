@@ -208,48 +208,7 @@
                                 <th></th>
                             </tr>
                             <tbody>
-                            <tr>
-                                <td>
-                                <th><input type="checkbox" id="check-all" class="flat"></th>
-                                </td>
-                                <td>Jennifer Acosta</td>
-                                <td>Junior Javascript Developer</td>
-                                <td>Edinburgh</td>
-                                <td>43</td>
-                                <td>2013/02/01</td>
-                                <td>2013/02/01</td>
-                                <td>
-                                    <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#/pencil-square-o"><i
-                                                    class="fa fa-edit"></i></a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#/pencil-square-o"><i
-                                                    class="fa fa-remove"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                <th><input type="checkbox" id="check-all" class="flat"></th>
-                                </td>
-                                <td>Cara Stevens</td>
-                                <td>Sales Assistant</td>
-                                <td>New York</td>
-                                <td>46</td>
-                                <td>2011/12/06</td>
-                                <td>2013/02/01</td>
-                                <td>
-                                    <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#/pencil-square-o"><i
-                                                    class="fa fa-edit"></i></a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a href="#/pencil-square-o"><i
-                                                    class="fa fa-remove"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
+
                             </tbody>
                         </table>
                     </div>
@@ -318,6 +277,8 @@
         $(document).ready(
             function () {
                 init_autocomplete();
+
+                load_course_section();
             }
         );
 
@@ -342,6 +303,18 @@
             $('.autocomplete-custom-append').autocomplete({
                 lookup: countriesArray
             });
+        }
+
+        function load_course_section(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+
+                }
+            };
+
+            xhttp.open("POST", "CourseSectionController.php?action=load-course-section", true);
+            xhttp.send();
         }
 
     </script>

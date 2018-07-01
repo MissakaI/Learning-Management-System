@@ -309,59 +309,8 @@
                                 </tr>
                                 </thead>
 
-                                <tbody>
-                                <tr class="even pointer">
-                                    <td class="a-center ">
-                                        <input type="checkbox" class="flat" name="table_records">
-                                    </td>
-                                    <td class=" ">121000040</td>
-                                    <td class=" ">May 23, 2014 11:47:56 PM </td>
-                                    <td class=" ">121000210 <i class="success fa fa-long-arrow-up"></i></td>
-                                    <td class=" ">John Blank L</td>
-                                    <td class=" ">Paid</td>
-                                </tr>
-                                <tr class="odd pointer">
-                                    <td class="a-center ">
-                                        <input type="checkbox" class="flat" name="table_records">
-                                    </td>
-                                    <td class=" ">121000039</td>
-                                    <td class=" ">May 23, 2014 11:30:12 PM</td>
-                                    <td class=" ">121000208 <i class="success fa fa-long-arrow-up"></i>
-                                    </td>
-                                    <td class=" ">John Blank L</td>
-                                    <td class=" ">Paid</td>
-                                </tr>
-                                <tr class="odd pointer">
-                                    <td class="a-center ">
-                                        <input type="checkbox" class="flat" name="table_records">
-                                    </td>
-                                    <td class=" ">121000037</td>
-                                    <td class=" ">May 26, 2014 10:52:44 PM</td>
-                                    <td class=" ">121000204</td>
-                                    <td class=" ">Mike Smith</td>
-                                    <td class=" ">Paid</td>
-                                </tr>
+                                <tbody id="course-view">
 
-                                <tr class="even pointer">
-                                    <td class="a-center ">
-                                        <input type="checkbox" class="flat" name="table_records">
-                                    </td>
-                                    <td class=" ">121000040</td>
-                                    <td class=" ">May 27, 2014 11:47:56 PM </td>
-                                    <td class=" ">121000210</td>
-                                    <td class=" ">John Blank L</td>
-                                    <td class=" ">Paid</td>
-                                </tr>
-                                <tr class="odd pointer">
-                                    <td class="a-center ">
-                                        <input type="checkbox" class="flat" name="table_records">
-                                    </td>
-                                    <td class=" ">121000039</td>
-                                    <td class=" ">May 28, 2014 11:30:12 PM</td>
-                                    <td class=" ">121000208</td>
-                                    <td class=" ">John Blank L</td>
-                                    <td class=" ">Paid</td>
-                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -490,6 +439,24 @@
                 addelement.css('display','none');
                 updateelement.css('display','none');
                 viewelement.css('display','block');
+
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        $('#course-view').append(
+                            "<tr>" +
+                            "<td>"+xhttp.responseText.isbnNO+"</td>" +
+                            "<td>"+xhttp.responseText.title+"</td>" +
+                            "<td>"+xhttp.responseText.publisher+"</td>" +
+                            "<td>"+xhttp.responseText.year+"</td>" +
+                            "<td>"+xhttp.responseText.author+"</td>" +
+                            "</tr>"
+                        )
+                    }
+                };
+
+                xhttp.open("POST", "ProfessorController.php?action=load-professor", true);
+                xhttp.send();
             }
 
         }

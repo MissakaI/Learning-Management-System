@@ -160,14 +160,7 @@
                                         </thead>
 
                                         <tbody>
-                                        <tr class="even pointer">
-                                            <td class=" ">3</td>
-                                            <td class=" ">Databse</td>
-                                            <td class=" ">1</td>
-                                            <td class=" ">1</td>
-                                            <td class=" ">1</td>
-                                            <td class=" ">N/A</td>
-                                        </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -209,20 +202,6 @@
                                         </thead>
 
                                         <tbody>
-                                        <tr class="even pointer">
-                                            <td class=" ">3</td>
-                                            <td class=" ">Database</td>
-                                            <td class=" ">2</td>
-                                            <td class=" ">1</td>
-                                            <td class=" ">2</td>
-                                            <td class=" ">Dr. Senevirathna</td>
-                                            <td>
-                                                <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a
-                                                            href="#/pencil-square-o"><i
-                                                                class="fa fa-plus-square"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
 
                                         </tbody>
                                     </table>
@@ -266,12 +245,7 @@
                                         </thead>
 
                                         <tbody>
-                                        <tr class="even pointer">
-                                            <td class=" ">Sample Inc.</td>
-                                            <td class=" ">3</td>
-                                            <td class=" ">2</td>
-                                            <td class=" ">N/A</td>
-                                        </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -341,7 +315,7 @@
 <script>
     $(document).ready(function () {
         $('#new-enrollment').css("display", "none");
-        $('#enrollments').css("display", "none");
+        $('#enrollments').css("display", "block");
         $('#company').css("display", "none");
     });
 
@@ -355,14 +329,50 @@
             existelement.css("display", "block");
             newelement.css("display", "none");
             compelement.css("display", "none");
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var obj = JSON.parse(xhttp.responseText);
+                    console.log(obj);
+                }
+            };
+
+            xhttp.open("GET", "../controller/StudentController.php?action=existing-course", true);
+            xhttp.send();
+
         } else if (value === 'new-course') {
             existelement.css("display", "none");
             newelement.css("display", "block");
             compelement.css("display", "none");
+
+            console.log("working 12");
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var obj = JSON.parse(xhttp.responseText);
+                    console.log(obj);
+                }
+            };
+
+            xhttp.open("GET", "../controller/CourseController.php?action=new-course", true);
+            xhttp.send();
         } else if (value === 'company') {
             existelement.css("display", "none");
             newelement.css("display", "none");
             compelement.css("display", "block");
+
+            console.log("working 12");
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var obj = JSON.parse(xhttp.responseText);
+                    console.log(obj);
+                }
+            };
+
+            xhttp.open("GET", "../controller/CompanyController.php?action=student-company", true);
+            xhttp.send();
         }
     }
 </script>

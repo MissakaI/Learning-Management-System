@@ -199,23 +199,8 @@
                                         </tr>
                                         </thead>
 
-                                        <tbody>
-                                        <tr class="even pointer">
-                                            <td class=" ">2017/CS/500</td>
-                                            <td class=" ">Mr Imitiaz</td>
-                                            <td class=" ">Galle Fort</td>
-                                            <td class=" ">N/A</td>
-                                            <td>
-                                                <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a
-                                                            href="#/pencil-square-o"><i class="fa fa-edit"></i></a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="fa-hover col-md-3 col-sm-4 col-xs-12"><a
-                                                            href="#/pencil-square-o"><i class="fa fa-remove"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        <tbody id="student-view">
+
 
                                         </tbody>
                                     </table>
@@ -396,6 +381,9 @@
     $(document).ready(function () {
         $('#add-student').css("display", "none");
         $('.graduate').css("display", "none");
+
+        load_student_details();
+
     });
 
     function btnClick(value) {
@@ -433,6 +421,33 @@
 
         xhttp.open("POST", "StudentController.php", true);
         xhttp.send("Sid=" + $("#st").val() + "&Name=" + $("#name").val() + "&Address=" + $("#office").val() + "&Status=" + $("#mobile").val() + "&Type=" + $("#dep-code:selected").text() + "&action=add");
+    }
+
+    function load_student_details(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                $('#student-view').append("<tr class='even pointer'>"+
+                    "<td>2017/CS/500</td>"+
+                    "<td >Mr Imitiaz</td>"+
+                    "<td>Galle Fort</td>"+
+                    "<td>N/A</td>"+
+                    "<td>"+
+                    "<div class='fa-hover col-md-3 col-sm-4 col-xs-12'><a"+
+                "href='#/pencil-square-o'><i class="fa fa-edit"></i></a>"+
+                "</div>"+
+                "</td>"+
+                "<td>"+
+                "<div class='fa-hover col-md-3 col-sm-4 col-xs-12'><a"+
+                "href='#/pencil-square-o'><i class='fa fa-remove'></i></a>"+
+                "</div>"+
+                "</td>"+
+                "</tr>");
+            }
+        };
+
+        xhttp.open("POST", "StudetnController.php?action=load-student", true);
+        xhttp.send();
     }
 
 

@@ -133,40 +133,7 @@
                     </div>
                 </div>
                 <div class="clearfix"></div>
-                <!-- top tiles -->
-                <!--<div class="row tile_count">
-                    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-user"></i> Total Users</span>
-                        <div class="count">2500</div>
-                        <span class="count_bottom"><i class="green">4% </i> From last Week</span>
-                    </div>
-                    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-clock-o"></i> Average Time</span>
-                        <div class="count">123.50</div>
-                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
-                    </div>
-                    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-user"></i> Total Males</span>
-                        <div class="count green">2,500</div>
-                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-                    </div>
-                    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-user"></i> Total Females</span>
-                        <div class="count">4,567</div>
-                        <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span>
-                    </div>
-                    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-user"></i> Total Collections</span>
-                        <div class="count">2,315</div>
-                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-                    </div>
-                    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                        <span class="count_top"><i class="fa fa-user"></i> Total Connections</span>
-                        <div class="count">7,325</div>
-                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-                    </div>
-                </div>-->
-                <!-- /top tiles -->
+
 
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12" id="view-books">
@@ -202,17 +169,7 @@
                                         </thead>
 
                                         <tbody>
-                                        <tr class="even pointer">
-                                            <td class="a-center ">
-                                                <input type="checkbox" class="flat" name="table_records">
-                                            </td>
-                                            <td class=" ">121000040</td>
-                                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                                            <td class=" ">121000210 <i class="success fa fa-long-arrow-up"></i></td>
-                                            <td class=" ">John Blank L</td>
-                                            <td class=" ">Paid</td>
-                                            <td class=" ">Paid</td>
-                                        </tr>
+
 
                                         </tbody>
                                     </table>
@@ -462,6 +419,16 @@
         } else if (value === 'view') {
             addelement.css("display", "none");
             viewelement.css("display", "block");
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+
+                }
+            };
+
+            xhttp.open("POST", "CourseController.php?action=load-professor", true);
+            xhttp.send();
         }
     }
 

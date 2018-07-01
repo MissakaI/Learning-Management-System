@@ -12,8 +12,7 @@ class DBConnection
 {
     private $servername = "localhost";
     private static $username = "root";
-    private static $password = "root";
-//    private $dbname = "lms_ucsc_scs1203";
+    private static $password = "mysql";
     private $dbname = "lms_ucsc_scs1203";
     private static $conn;
     private static $instance;

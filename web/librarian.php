@@ -212,11 +212,6 @@
                                         </thead>
 
                                         <tbody>
-                                        <tr class="even pointer">
-                                            <td class="a-center ">
-                                                <input type="checkbox" class="flat" name="table_records">
-                                            </td>
-                                        </tr>
 
                                         </tbody>
                                     </table>
