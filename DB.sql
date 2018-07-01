@@ -209,6 +209,13 @@ INSERT INTO Professor VALUES ('E008','Mr Bimal Perera','Office 8',0774343300,'D0
 INSERT INTO Professor VALUES ('E009','Mr Namal Fernando','Office 9',0774343392,'D009');
 INSERT INTO Professor VALUES ('E010','Mrs Mohini Peiris','Office 10',0774343311,'D010');
 
+INSERT INTO Course VALUES ('C001','Course A',11.2,'College ABC','C001','D001');
+INSERT INTO Course VALUES ('C002','Course B',12.7,'College DEF','C002','D008');
+INSERT INTO Course VALUES ('C003','Course C',18.9,'College GHI','C003','D005');
+INSERT INTO Course VALUES ('C004','Course D',20.0,'College JKL','C004','D003');
+INSERT INTO Course VALUES ('C005','Course E',15.0,'College MNO','C005','D002');
+
+
 INSERT INTO Book VALUES ('C How to Program',' 978-0-13-612356-9',' Pearson Education',2010);
 INSERT INTO Book VALUES ('Database Management System','978-0-37-575154-7','Pearson Education',2012);
 INSERT INTO Book VALUES ('Java The Complete Reference, 9th Edition','978-33-75-75154-7','Modern Library',2015);
