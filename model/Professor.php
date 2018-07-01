@@ -13,12 +13,31 @@ class Professor
 {
     public function addProfessor(\Professor\ProfessorBO $Professor):bool {
         $conn = DBConnection::getConnection();
-        $sql = "INSERT INTO Professor VALUES ('{$Professor->getProfId()}','{$Professor->getName()}','{$Professor->getOffice()}','{$Professor->getPhone()}','{$Professor->getDepCode()}')";
+        $sql = "INSERT INTO Professor VALUES ('{$Professor->getProfId()}','{$Professor->getName()}'," .
+            "'{$Professor->getOffice()}','{$Professor->getPhone()}','{$Professor->getDepCode()}')";
         $result = $conn->query($sql);
         if ($result === TRUE) {
             return TRUE;
         } else {
             return FALSE;
+        }
+    }
+
+    public function getProfessors(): array
+    {
+        $conn = DBConnection::getConnection();
+        $sql = "SELECT * FROM Professor";
+        $resultSet = $conn->query($sql);
+        if ($resultSet->num_rows > 0) {
+            $arr = array();
+            while ($row = $resultSet->fetch_assoc()) {
+                $bo = new \Professor\ProfessorBO($row["EmpID"], $row["Name"], $row["Office"], $row["Phone"],
+                    $row["DepartmentCode"]);
+                array_push($arr, $bo);
+            }
+            return $arr;
+        } else {
+            return NULL;
         }
     }
 }

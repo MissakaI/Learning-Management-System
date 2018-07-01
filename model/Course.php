@@ -142,9 +142,4 @@ class Course
             return NULL;
         }
     }
-
-    public function getLabSessions(\Course\CourseSectionBO $sectionBO): array
-    {
-
-    }
 }
