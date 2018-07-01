@@ -7,7 +7,7 @@
  * Time: 1:04 AM
  */
 
-namespace DepartmentModel;
+namespace model;
 
 class Department
 {

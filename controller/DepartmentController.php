@@ -6,14 +6,13 @@
  * Time: 3:10 PM
  */
 
-//require('.php');
-//use DepartmentModel\Department;
+//use model\Department;
 
 $acttion = $_GET["action"];
 
 
 if($acttion == 'view-all'){
-    $DeparmentModel = new \DepartmentModel\Department();
+    $DeparmentModel = new model\Department();
     $value = $DeparmentModel->getDepartments();
     echo $value;
 }
