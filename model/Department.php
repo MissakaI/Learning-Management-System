@@ -6,6 +6,9 @@
  * Date: 2018-06-26
  * Time: 1:04 AM
  */
+
+namespace DepartmentModel;
+
 class Department
 {
     public function getDepartments(): array

@@ -701,6 +701,8 @@
         $('#add-professor').css("display", "none");
         $('#add-department').css("display", "none");
         $('#add-company').css("display", "none");
+
+        load_deparment_code();
     });
 
     function btnClick(value) {
@@ -769,6 +771,21 @@
 
         xhttp.open("POST", "ProfessorController.php", true);
         xhttp.send("Empid=" + $("#empa-id").val() + "&Name=" + $("#name").val() + "&Office=" + $("#office").val() + "&Phone=" + $("#mobile").val() + "&DepartmentCode=" + $("#dep-code:selected").text() + "&action=add");
+
+    }
+
+
+    function load_deparment_code() {
+        console.log("working 12");
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(xhttp.responseText);
+            }
+        };
+
+        xhttp.open("GET", "../controller/DepartmentController.php?action=view-all", true);
+        xhttp.send();
 
     }
 
