@@ -218,13 +218,13 @@
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Depatment Code</label>
                                     <div class="col-md-7 col-xs-12">
-                                        <<<<<<< HEAD
+
                                         <select id="dep_code" class="form-control">
 
-                                            =======
+
                                             <select class="form-control">
 
-                                                >>>>>>> 8939b5936d4a4a155bad86c58b745d34c1b1b180
+
                                             </select>
                                     </div>
                                 </div>
@@ -235,12 +235,10 @@
                                     <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                         <button class="btn btn-primary" type="button">Cancel</button>
                                         <button class="btn btn-primary" type="reset">Reset</button>
-<<<<<<< HEAD
+
                                         <button type="submit" class="btn btn-success" onclick="send_details()">Submit
                                         </button>
-=======
-                                        <button type="submit" class="btn btn-success" onclick="send_details()">Submit</button>
->>>>>>> a60c710188e78b5128f2d27bd689b463ef92ab84
+
                                     </div>
                                 </div>
 
@@ -358,17 +356,8 @@
             };
 
             xhttp.open("POST", "ProfessorController.php", true);
-        <<<<<<<
-            HEAD;
-            xhttp.send("Empid=" + $("#empa-id").val() + "Name" + $("#name").val() + "Office" + $("#office").val() + "Phone" + $("#mobile").val() + "DepartmentCode" + $("#dep-code:selected").text();
-        )
+            xhttp.send("Empid=" + $("#empa-id").val() + "&Name=" + $("#name").val() + "&Office=" + $("#office").val() + "&Phone=" + $("#mobile").val() + "&DepartmentCode=" + $("#dep-code:selected").text() + "&action=add");
 
-        ======
-            =
-                xhttp.send("Empid=" + $("#empa-id").val() + "&Name=" + $("#name").val() + "&Office=" + $("#office").val() + "&Phone=" + $("#mobile").val() + "&DepartmentCode=" + $("#d:selected").text() + "&action=add";
-        )
-        >>>>>>>
-            a60c710188e78b5128f2d27bd689b463ef92ab84
         }
 
 
