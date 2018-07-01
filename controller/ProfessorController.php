@@ -17,8 +17,6 @@ $DepartmentCode = $_POST["DepartmentCode"];
 
 if($action === 'add') {
 
-
-
     $ProfessorBO = new Professor\ProfessorBO($Empid, $Name, $Office, $Phone, $DepartmentCode);
 
     $ProfessorModel = new \Professor\Professor();
