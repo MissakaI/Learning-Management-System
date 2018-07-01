@@ -36,7 +36,7 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="dashboard.php" class="site_title"><i class="fa fa-book"></i> <span>Learning MS</span></a>
+                    <a href="#" class="site_title"><i class="fa fa-book"></i> <span>Learning MS</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -413,12 +413,35 @@
         }
     }
 
+
     $("#graduate").click(function (event) {
         $('.graduate').css("display", "block");
     });
     $("#undergraduate").click(function (event) {
         $('.graduate').css("display", "none");
     });
+
+
+    function send_details() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                if (xhttp.responseText === 'TRUE') {
+                    $('#result').append(
+                        "<div class='alert alert-success'>Student Added</div>"
+                    );
+                } else {
+                    $('#result').append(
+                        "<div class='alert alert-danger'>Student Adding Failed</div>"
+                    );
+                }
+            }
+        };
+
+        xhttp.open("POST", "StudentController.php", true);
+        xhttp.send("Sid=" + $("#st").val() + "&Name=" + $("#name").val() + "&Address=" + $("#office").val() + "&Status=" + $("#mobile").val() + "&Type=" + $("#dep-code:selected").text() + "&action=add");
+    }
+
 
 </script>
 
