@@ -370,6 +370,17 @@
         function () {
             init_autocomplete();
             $('#add-book').css('display', 'none');
+
+            console.log("working");
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(xhttp.responseText);
+                }
+            };
+            xhttp.open("POST","../controller/BookController.php", true);
+            xhttp.send("action=view-all");
         }
     );
 
@@ -446,6 +457,20 @@
             viewelement.css("display", "block");
         }
     }
+
+    $(document).load(function () {
+        console.log("working 1");
+        // var xhttp = new XMLHttpRequest();
+        // xhttp.onreadystatechange = function() {
+        //
+        //     if (this.readyState == 4 && this.status == 200) {
+        //         // console.log(this.responseText);
+        //         console.log("working")
+        //     }
+        // };
+        // xhttp.open("POST","BookController.php", true);
+        // xhttp.send("action=view-all");
+    });
 
 </script>
 
